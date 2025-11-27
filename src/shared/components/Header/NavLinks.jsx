@@ -1,31 +1,24 @@
-import { NavLink } from "react-router-dom";
+import { getFilteredLinks } from "../../config/navLinks";
+import GenericNavLink from "./GenericNavLink";
 
-const NavLinks = () => {
+const NavLinks = ({ isMobile = false }) => {
     const isAuthenticated = true;
-    const linkClasses =
-        "text-white text-lg font-medium hover:text-red-400 transition-colors";
+    const links = getFilteredLinks(isAuthenticated)
 
     return (
-        <nav className="flex gap-8">
-            <NavLink to="/" className={linkClasses}>
-                Home
-            </NavLink>
-
-            <NavLink to="/OurMenu" className={linkClasses}>
-                Our Menu
-            </NavLink>
-
-            {isAuthenticated ? (
-                <NavLink to="/profile" className={linkClasses}>
-                    Profile
-                </NavLink>
-            ) : (
-                <NavLink to="/login" className={linkClasses}>
-                    Log In
-                </NavLink>
-            )}
+        <nav className={`flex ${isMobile ? 'flex-col gap-4 p-4' : 'gap-8 text-lg'}`}>
+            {links.map((link) => (
+                <GenericNavLink
+                    key={link.url}
+                    url={link.url}
+                    name={link.name}
+                    activeClass="bg-gradient-to-t"
+                    hoverClass="hover:bg-gradient-to-t"
+                />
+            ))
+            }
         </nav>
     )
 }
 
-export default NavLinks
+export default NavLinks;

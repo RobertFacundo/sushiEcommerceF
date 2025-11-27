@@ -1,10 +1,20 @@
-import { Link } from "react-router-dom";
+import GenericNavLink from "./GenericNavLink";
+import logoImage from '/sushi.png'
 
 const Logo = () => {
     return (
-        <Link to="/" className="text-red-500 font-bold text-2xl tracking-wide">
-            Sushi Shop
-        </Link>
+        <div className="flex items-center gap-2 text-4xl tracking-tight">
+            <div className="w-13 h-13 rounded-full bg-white flex items-center justify-center overflow-hidden">
+                <img src={logoImage} alt="Sushi Logo" className="w-10 h-10 object-cover" />
+            </div>
+            <GenericNavLink
+                url='/'
+                name='すし'
+                activeClass=""
+                hoverClass=""
+                extraClasses=""
+            />
+        </div>
     )
 }
 
