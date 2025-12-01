@@ -10,3 +10,10 @@ body{
     font-family: "Kiwi Maru", serif;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* bloquea cualquier scroll vertical */
+}
+

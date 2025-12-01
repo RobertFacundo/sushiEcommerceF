@@ -6,7 +6,7 @@ import BurgerButton from "./BurgerButton";
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
     return (
-        <header className="bg-[#0d0d0d] sticky top-0 z-50 shadow-lg">
+        <header className="bg-[#0d0d0d] sticky top-0 z-50">
             <div className="max-w-6xl mx-auto h-16 flex items-center justify-between pr-1 pl-2">
                 <Logo />
                 <div className="hidden md:flex pr-4">

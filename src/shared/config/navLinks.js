@@ -2,7 +2,7 @@ export const NAV_LINKS = [
     { url: '/', name: 'Home', auth: 'any' },
     { url: '/OurMenu', name: 'Our Menu', auth: 'any' },
     { url: '/Profile', name: 'Profile', auth: 'auth' },
-    { url: '/Log In', name: 'Log In', auth: 'guest' }
+    { url: '/Authentication', name: 'Authenticate', auth: 'guest' }
 ]
 
 export const getFilteredLinks = (isAuthenticated)=>{

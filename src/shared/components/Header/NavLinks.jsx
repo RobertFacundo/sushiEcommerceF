@@ -1,8 +1,9 @@
 import { getFilteredLinks } from "../../config/navLinks";
 import GenericNavLink from "./GenericNavLink";
+import { useSelector } from "react-redux";
 
 const NavLinks = ({ isMobile = false }) => {
-    const isAuthenticated = true;
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
     const links = getFilteredLinks(isAuthenticated)
 
     return (
