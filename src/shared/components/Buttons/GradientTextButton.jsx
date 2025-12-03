@@ -4,11 +4,12 @@ const GradientTextButton = ({ children, onClick, className = '' }) => {
             onClick={onClick}
             className={`
                 font-medium transition-all duration-800
-                text-white
+                text-black dark:text-white
                 hover:text-transparent
-                hover:bg-clip-text
+                bg-clip-text
                 hover:bg-gradient-to-t
-                hover:from-red-400 hover:to-white
+                hover:from-red-400
+                hover:to-black dark:hover:to-white
                 cursor-pointer
                 ${className}
             `}

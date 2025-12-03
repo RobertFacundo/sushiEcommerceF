@@ -4,11 +4,14 @@ import OurMenu from './features/ourMenu/components/ourMenuView';
 import ProfileView from './features/profile/components/ProfileView';
 import AuthenticationView from './features/auth/components/AuthenticationView';
 import Header from './shared/components/Header/Header';
+import ThemeController from './shared/components/app/ThemeController.jsx';
 
 function App() {
 
   return (
     <>
+      <ThemeController />
+
       <Header />
       <Routes>
         <Route path='/' element={<HomeView />} />
