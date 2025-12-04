@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-import HomeView from './features/home/components/Home';
-import OurMenu from './features/ourMenu/components/ourMenuView';
-import ProfileView from './features/profile/components/ProfileView';
-import AuthenticationView from './features/auth/components/AuthenticationView';
+import HomeView from './features/home/Home.jsx';
+import OurMenu from './features/ourMenu/ourMenuView.jsx';
+import ProfileView from './features/profile/ProfileView';
+import AuthenticationView from './features/auth/AuthenticationView.jsx';
 import Header from './shared/components/Header/Header';
 import ThemeController from './shared/components/app/ThemeController.jsx';
 

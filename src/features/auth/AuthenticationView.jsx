@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useAuthForm } from "../hooks/useAuthForm";
-import FormInput from "./FormInput";
-import { authFields } from "../../../shared/config/inputFields";
-import GradientTextButton from "../../../shared/components/Buttons/GradientTextButton";
-import StyledTitle from "../../../shared/components/Titles/StyledTitle";
-import FormButton from "../../../shared/components/Buttons/FormButton";
+import { useAuthForm } from "./hooks/useAuthForm";
+import FormInput from "./components/FormInput";
+import { authFields } from "../../shared/config/inputFields";
+import GradientTextButton from "../../shared/components/Buttons/GradientTextButton";
+import StyledTitle from "../../shared/components/Titles/StyledTitle";
+import FormButton from "../../shared/components/Buttons/FormButton";
 
 const AuthenticationView = ({ initialType = 'login' }) => {
     const [type, setType] = useState(initialType);
