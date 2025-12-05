@@ -4,8 +4,8 @@ const ProfileHeader = ({createdAt }) => {
     const formattedDate = new Date(createdAt).toLocaleDateString();
 
     return (
-        <div className="flex items-center gap-5">
-            <StyledParagraph className='italic'>
+        <div className="text-right">
+            <StyledParagraph className='italic text-right'>
                 User since {formattedDate}
             </StyledParagraph>
         </div>
