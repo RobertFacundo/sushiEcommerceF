@@ -21,7 +21,7 @@ export const addNotification = async (message) => {
     return data;
 };
 
-export const markNotificationAsRead = async (index) => {
-    const { data } = await api.patch(`/user/notifications/${index}/read`);
+export const markNotificationAsRead = async (notificationId) => {
+    const { data } = await api.patch(`/user/notifications/${notificationId}/read`);
     return data;
 };

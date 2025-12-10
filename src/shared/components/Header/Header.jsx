@@ -1,11 +1,14 @@
 import Logo from "./Logo";
-import NavLinks from "./NavLinks";
+import NavLinks from '../Navigation/NavLinks'
 import { useState } from "react";
 import BurgerButton from "./BurgerButton";
 import ThemeToggle from './ThemeToggle';
+import NotificationBell from "../Notification/NotificationBell";
+import { useSelector } from "react-redux";
 
 const Header = () => {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
 
     const headerClasses = "bg-white dark:bg-[#0d0d0d] sticky top-0 z-50 transition-colors duration-300 shadow-md dark:shadow-none";
 
@@ -18,6 +21,7 @@ const Header = () => {
                 <Logo />
                 <div className="hidden md:flex pr-4">
                     <NavLinks />
+                    {isAuthenticated && <NotificationBell/>}
                 </div>
                 <ThemeToggle size={24} />
                 <div className="md:hidden">
@@ -26,6 +30,7 @@ const Header = () => {
             </div >
             <div className={mobileMenuClasses}>
                 <NavLinks isMobile />
+                {isAuthenticated && <NotificationBell/>}
             </div>
         </header>
     )

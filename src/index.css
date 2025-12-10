@@ -32,7 +32,18 @@ html {
 }
 
 .theme-transition * {
-  transition: background-color 0.9s ease, color 0.9s ease, border-color 0.9s ease, box-shadow 0.9s ease, transform 0.9s ease, opacity 0.9s ease;
+  transition: background-color 0.9s ease,background-image 1.5s, color 0.9s ease, border-color 0.9s ease, box-shadow 0.9s ease, transform 0.9s ease, opacity 0.9s ease;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #110505; /* indigo-300 */
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 

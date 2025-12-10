@@ -5,12 +5,14 @@ import ProfileView from './features/profile/ProfileView';
 import AuthenticationView from './features/auth/AuthenticationView.jsx';
 import Header from './shared/components/Header/Header';
 import ThemeController from './shared/components/app/ThemeController.jsx';
+import { Toaster } from 'sonner';
 
 function App() {
 
   return (
     <>
       <ThemeController />
+      <Toaster richColors position='top-right'/>
 
       <Header />
       <Routes>
