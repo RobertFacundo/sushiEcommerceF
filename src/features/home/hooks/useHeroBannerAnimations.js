@@ -13,7 +13,7 @@ export const useHeroBannerAnimation = (sectionRef, titleRef, subtitleRef, ctaRef
                 sectionRef.current,
                 { scale: 1 },
                 {
-                    scale: 1.05,
+                    scale: 1.01,
                     ease: "power1.out",
                     scrollTrigger: {
                         trigger: sectionRef.current,

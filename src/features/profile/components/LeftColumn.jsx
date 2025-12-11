@@ -7,15 +7,13 @@ import PasswordInputField from "./PasswordInputField";
 import GiftCard from "./GiftCard";
 import AvatarSelector from "./AvatarSelector";
 
-const LeftColumn = ({ profile }) => {
+const LeftColumn = ({ profile, giftCardRef }) => {
     const updateProfileMutation = useUpdateProfile();
     const [avatar, setAvatar] = useState(profile.avatar ?? '/avatar.jpg')
 
-
-    console.log(profile)
     return (
         <>
-            <GiftCard code={profile.giftCard} description="Use this gift card for your next purchase!" />
+            <GiftCard ref={giftCardRef} code={profile.giftCard} description="Use this gift card for your next purchase!" />
             <div className="bg-white dark:bg-zinc-900 shadow-sm rounded-xl p-6 h-fit space-y-6">
                 <div className="flex items-center justify-between gap-8">
                     <StyledTitle>Account Details</StyledTitle>

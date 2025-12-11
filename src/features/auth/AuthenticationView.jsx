@@ -5,21 +5,24 @@ import { authFields } from "../../shared/config/inputFields";
 import GradientTextButton from "../../shared/components/Buttons/GradientTextButton";
 import StyledTitle from "../../shared/components/Titles/StyledTitle";
 import FormButton from "../../shared/components/Buttons/FormButton";
+import { useAuthAnimation } from "./hooks/useAuthAnimation";
 
 const AuthenticationView = ({ initialType = 'login' }) => {
     const [type, setType] = useState(initialType);
     const { register, handleSubmit, onSubmit, errors, loading, error } = useAuthForm(type);
 
-    return (
-        <div className="relative h-screen overflow-hidden flex items-center justify-center dark:bg-[url('/authenticationBG.jpg')] bg-[url('/authenticationBGLight.jpg')] bg-cover bg-bottom">
+    const { containerRef, cardRef, formRef } = useAuthAnimation();
 
-            <div className="relative bg-white dark:bg-[#0d0d0d] z-10 border border-black-500 dark:border-red-500 p-8 rounded-lg w-full max-w-md"
+    return (
+        <div ref={containerRef} className="relative h-screen overflow-hidden flex items-center justify-center dark:bg-[url('/authenticationBG.jpg')] bg-[url('/authenticationBGLight.jpg')] bg-cover bg-bottom">
+
+            <div ref={cardRef} className="relative bg-white dark:bg-[#0d0d0d] z-10 border border-black-500 dark:border-red-500 p-8 rounded-lg w-full max-w-md"
                 style={{ boxShadow: "var(--card-shadow)" }}
             >
                 <StyledTitle>
                     {type === 'login' ? 'Login' : 'Register'}
                 </StyledTitle>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                     {authFields
                         .filter(field => field.showIn.includes(type))
                         .map(field => (

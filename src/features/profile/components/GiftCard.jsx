@@ -1,9 +1,9 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import BarCode from 'react-barcode';
 
-const GiftCard = ({ code, description }) => {
+const GiftCard = forwardRef(({ code, description }, ref) => {
     return (
-        <div className="flex flex-col items-center space-y-2 mb-3">
+        <div ref={ref} className="flex flex-col items-center space-y-2 mb-3">
             <div className="relative w-125 h-70 rounded-xl shadow-lg overflow-hidden"  style={{ boxShadow: "var(--card-shadow)" }}>
                 <img src="/giftCard.jpg" alt="GiftCard" className="absolute inset-0 w-full h-full object-cover" />
 
@@ -26,6 +26,6 @@ const GiftCard = ({ code, description }) => {
             </div>
         </div>
     );
-};
+});
 
 export default GiftCard;

@@ -1,22 +1,21 @@
-import { useSelector } from "react-redux";
 import StyledTitle from "../../../shared/components/Titles/StyledTitle"
 import PurchaseHistory from "./PurchaseHistory";
 import { useProfile } from "../hooks/useProfile";
 import NotificationList from "./NotificationList";
 
-const RightColumn = () => {
+const RightColumn = ({ sectionsRef }) => {
     const { data: profile, isLoading, isError } = useProfile();
     const purchases = profile?.purchaseHistory;
 
     return (
         <div className="bg-white dark:bg-zinc-900 shadow-sm rounded-xl p-6 space-y-8">
-            <section>
+            <section ref={el => sectionsRef.current[0] = el}>
                 <StyledTitle>
                     Notifications
                 </StyledTitle>
-                <NotificationList/>
+                <NotificationList />
             </section>
-            <section>
+            <section ref={el => sectionsRef.current[1] = el}>
                 <StyledTitle>
                     Purchase History
                 </StyledTitle>
