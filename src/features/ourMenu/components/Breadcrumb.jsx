@@ -1,13 +1,14 @@
+import { MdRestaurantMenu } from 'react-icons/md'
 
 const BreadCrumb = ({ selectedCategory, onResetCategory }) => {
 
     return (
-        <nav className="mb-4 text-sm flex items-center gap-2">
+        <nav className="mb-1 text-sm flex items-center gap-2">
             <span
-                className="dark:text-white cursor-pointer hover:text-red-300"
+                className="dark:text-white cursor-pointer hover:text-red-400"
                 onClick={onResetCategory}
             >
-                Our Menu    
+                <MdRestaurantMenu size={21} />
             </span>
 
             {selectedCategory && (

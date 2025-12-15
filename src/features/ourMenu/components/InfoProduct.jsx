@@ -1,4 +1,4 @@
-const InfoProduct = ({ description, price }) => {
+const InfoProduct = ({ description, price, outOfStock }) => {
     return (
         <>
             <p className="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2 mt-3 ">
@@ -12,11 +12,15 @@ const InfoProduct = ({ description, price }) => {
 
             <button
                 // onClick={onAddToCart}
-                className="bg-red-500 text-white 
-                           px-4 py-1 rounded-lg hover:bg-red-600 
-                           transition-colors text-sm cursor-pointer"
+                className={`
+                    px-4 py-1 rounded-lg text-sm transition-colors text-white
+                    ${outOfStock
+                        ? "bg-gray-400 cursor-not-allowed"
+                        : "bg-red-500 hover:bg-red-600 cursor-pointer"}
+                `}
+                disabled={outOfStock}
             >
-                Add to Cart
+               Add To Cart
             </button>
         </>
     );
