@@ -1,4 +1,4 @@
-const InfoProduct = ({ description, price, outOfStock }) => {
+const InfoProduct = ({ description, price, outOfStock, onAddToCart }) => {
     return (
         <>
             <p className="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2 mt-3 ">
@@ -11,7 +11,7 @@ const InfoProduct = ({ description, price, outOfStock }) => {
             </div>
 
             <button
-                // onClick={onAddToCart}
+                onClick={onAddToCart}
                 className={`
                     px-4 py-1 rounded-lg text-sm transition-colors text-white
                     ${outOfStock

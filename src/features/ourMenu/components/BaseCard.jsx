@@ -3,7 +3,7 @@ import InfoProduct from "./InfoProduct";
 import { useAnimation } from "../hooks/useAnimation";
 import { getImageUrl } from '../../../shared/utils/getUrlImage';
 
-const BaseCard = ({ mode, data, onSelectCategory }) => {
+const BaseCard = ({ mode, data, onSelectCategory, onAddToCart }) => {
     const animation = useAnimation()
 
     const isCategory = mode === 'category';
@@ -50,7 +50,7 @@ const BaseCard = ({ mode, data, onSelectCategory }) => {
                     description={data.description}
                     price={data.price}
                     outOfStock={outOfStock}
-                // onAddToCart={() => onAddToCart(data)}
+                    onAddToCart={() => onAddToCart(data)}
                 />
             )}
         </motion.div>

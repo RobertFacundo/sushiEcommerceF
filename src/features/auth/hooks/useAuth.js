@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { loginUser, registerUser, resetAuthState } from '../redux/slices/auth.slice';
-import { useEffect } from 'react';
+import { useMergeCart } from '../../cart/hooks/useMergeCart';
 
 export const useAuth = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { mutateAsync: mergeCart } = useMergeCart();
 
     const { user, token, isAuthenticated, loading, error } = useSelector(state => state.auth);
 
@@ -15,6 +16,8 @@ export const useAuth = () => {
 
         if (action.fulfilled.match(resultAction)) {
             localStorage.setItem('token', resultAction.payload.token);
+
+            await mergeCart()
             navigate('/Profile')
         }
 

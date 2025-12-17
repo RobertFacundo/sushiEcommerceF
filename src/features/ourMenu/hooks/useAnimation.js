@@ -1,18 +1,21 @@
 
 export const useAnimation = () => {
-    return {
+      return {
         initial: {
-            opacity: 0.4,
+            y: 8,
+            opacity: 0.4
         },
         animate: {
-            opacity: 1,
+            y: 0,
+            opacity: 1
         },
         exit: {
-            opacity: 0.2,
+            y: 12,
+            opacity: 0
         },
         transition: {
-            duration: 0.6,
-            ease: 'backIn',
+            duration: 1.1,
+            ease: 'easeOut',
         }
     };
 };

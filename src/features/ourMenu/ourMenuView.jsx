@@ -1,6 +1,6 @@
-import {useState } from "react";
+import { useState } from "react";
 import List from './components/List.jsx'
-import CartSidebar from './components/CartSidebar.jsx';
+import Cart from "../cart/components/Cart.jsx";
 import Breadcrumb from './components/Breadcrumb.jsx';
 
 const OurMenu = () => {
@@ -22,7 +22,9 @@ const OurMenu = () => {
                 />
             </div>
             <div className="hidden lg:block w-1/3  dark:bg-black p-6 shadow-inner">
-                <CartSidebar />
+                <div className="sticky top-0 h-screen p-6">
+                    <Cart />
+                </div>
             </div>
         </div>
     );
