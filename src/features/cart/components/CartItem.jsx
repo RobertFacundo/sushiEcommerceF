@@ -1,11 +1,21 @@
 import { getImageUrl } from "../../../shared/utils/getUrlImage";
+import { useCartItemAnimation } from "../hooks/useCartAnimation";
+import {motion} from 'framer-motion'
 
 const CartItem = ({ item, onUpdate, onRemove }) => {
     const { productId, quantity } = item;
     const total = productId.price * quantity
 
+    const { itemVariants } = useCartItemAnimation()
+
     return (
-        <li className="flex items-center gap-4 border-b border-gray-200 dar:border-stone-700">
+        <motion.li
+            layout
+            initial='hidden'
+            animate='visible'
+            exit='exit'
+            variants={itemVariants}
+            className="flex items-center gap-6 border-b border-gray-200 dar:border-stone-700 mr-2">
             <img
                 className="w-21 h-21 object-cover rounded-lg flex-shrink-0"
                 src={getImageUrl(productId.imageUrl)} alt={productId.price} />
@@ -26,7 +36,7 @@ const CartItem = ({ item, onUpdate, onRemove }) => {
                 onChange={(e) =>
                     onUpdate(productId._id, Number(e.target.value))
                 }
-                className="w-14 text-center border border-gray-300 dark:border-stone-600 rounded-md bg-white dark:bg-black text-gray-800 dark:text-white"
+                className="w-10 text-center border border-gray-300 dark:border-stone-600 rounded-md bg-white dark:bg-black text-gray-800 dark:text-white"
             />
             <span className="w-16 text-right font-semibold text-gray-800 dark:text-white">
                 ${total.toFixed(2)}
@@ -34,12 +44,12 @@ const CartItem = ({ item, onUpdate, onRemove }) => {
 
             <button
                 onClick={() => onRemove(productId._id)}
-                className="text-gray-400 hover:text-red-500 transition-colors text-lg"
+                className="text-gray-400 hover:text-red-500 transition-colors text-lg cursor-pointer"
                 aria-label="Remove item"
             >
                 ✕
             </button>
-        </li>
+        </motion.li>
     );
 };
 

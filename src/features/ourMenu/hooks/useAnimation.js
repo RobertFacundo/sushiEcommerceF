@@ -1,21 +1,22 @@
+import { useMemo } from "react";
 
-export const useAnimation = () => {
-      return {
-        initial: {
-            y: 8,
-            opacity: 0.4
+export const useProductAnimation = () => {
+    const variants = useMemo(() => ({
+        hidden: {
+            opacity: 0,
+            y: 20
         },
-        animate: {
+        visible: {
+            opacity: 1,
             y: 0,
-            opacity: 1
+            transition: { type: 'spring', stiffness: 120, damping: 20 } 
         },
         exit: {
-            y: 12,
-            opacity: 0
-        },
-        transition: {
-            duration: 1.1,
-            ease: 'easeOut',
+            opacity: 0,
+            y: -20,
+            transition: { duration: 0.2 }
         }
-    };
-};
+    }), []);
+
+    return { variants }
+}

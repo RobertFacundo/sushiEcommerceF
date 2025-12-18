@@ -2,15 +2,19 @@ import { useState } from "react";
 import List from './components/List.jsx'
 import Cart from "../cart/components/Cart.jsx";
 import Breadcrumb from './components/Breadcrumb.jsx';
+import { motion, AnimatePresence } from "framer-motion";
+import { useCartAnimation } from "../cart/hooks/useCartAnimation.js";
 
 const OurMenu = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
 
     const isShowingCategories = selectedCategory === null;
 
+    const { variants } = useCartAnimation();
+
     return (
         <div className="flex w-full min-h-screen dark:bg-neutral-900">
-            <div className="w-full lg:w-2/3 p-6">
+            <div className="w-full lg:w-2/3 p-6 min-h-screen">
                 <Breadcrumb
                     selectedCategory={selectedCategory}
                     onResetCategory={() => setSelectedCategory(null)}
@@ -21,11 +25,15 @@ const OurMenu = () => {
                     onSelectCategory={setSelectedCategory}
                 />
             </div>
-            <div className="hidden lg:block w-1/3  dark:bg-black p-6 shadow-inner">
-                <div className="sticky top-0 h-screen p-6">
+            <AnimatePresence>
+                <motion.div key='cart'
+                    initial='hidden'
+                    animate='visible'
+                    exit='exit'
+                    variants={variants} className="hidden lg:block w-1/3  dark:bg-black p-6 shadow-inner fixed right-0 top-15 h-screen">
                     <Cart />
-                </div>
-            </div>
+                </motion.div>
+            </AnimatePresence>
         </div>
     );
 };

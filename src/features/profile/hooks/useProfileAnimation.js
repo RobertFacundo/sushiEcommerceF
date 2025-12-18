@@ -25,7 +25,7 @@ export const useProfileAnimation = () => {
                 .from(giftCardRef.current, {
                     opacity: 0,
                     scale: 0.95,
-                    duration: 3.9,
+                    duration: 0.9,
                 }, "-=0.8")
         });
 

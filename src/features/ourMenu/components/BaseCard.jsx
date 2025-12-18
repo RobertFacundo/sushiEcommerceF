@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import InfoProduct from "./InfoProduct";
-import { useAnimation } from "../hooks/useAnimation";
+import { useProductAnimation } from "../hooks/useAnimation";
 import { getImageUrl } from '../../../shared/utils/getUrlImage';
 
 const BaseCard = ({ mode, data, onSelectCategory, onAddToCart }) => {
-    const animation = useAnimation()
+    const { variants } = useProductAnimation()
 
     const isCategory = mode === 'category';
     const isProduct = mode === 'product';
@@ -13,7 +13,10 @@ const BaseCard = ({ mode, data, onSelectCategory, onAddToCart }) => {
 
     return (
         <motion.div
-            {...animation}
+            initial='hidden'
+            animate='visible'
+            exit='exit'
+            variants={variants}
             onClick={() => isCategory && onSelectCategory(data)}
             className="cursor-pointer bg-white rounded-xl shadow-md 
                        border border-gray-100

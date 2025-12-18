@@ -15,9 +15,13 @@ export const useAuth = () => {
         const resultAction = await dispatch(action(payload));
 
         if (action.fulfilled.match(resultAction)) {
+            console.log('Login ok!')
             localStorage.setItem('token', resultAction.payload.token);
 
+            console.log('Calling merge cart')
             await mergeCart()
+            console.log('merge cart finished')
+            localStorage.removeItem('cartId')
             navigate('/Profile')
         }
 
