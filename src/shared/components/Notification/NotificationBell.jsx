@@ -1,6 +1,6 @@
 import { useState, useRef} from 'react';
 import { FiBell } from 'react-icons/fi';
-import NotificationDropdown from './NotificationDropDown';
+import NotificationDropDown from './NotificationDropDown';
 import { useUnreadCount } from '../../hooks/useUnreadCount';
 import { useClickOutside } from '../../hooks/useClickOutside';
 
@@ -29,7 +29,7 @@ const NotificationBell = () => {
                 )}
             </button>
             <div className={`absolute right-0 mt-2 z-30 transform transition-all duration-900 ${open ? "scale-100 opacity-100 " : "scale-90 opacity-0 pointer-events-none"}`}>
-                <NotificationDropdown close={() => setOpen(false)} />
+                <NotificationDropDown close={() => setOpen(false)} />
             </div>
         </div>
     )
