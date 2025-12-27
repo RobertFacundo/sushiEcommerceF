@@ -3,7 +3,7 @@ import HomeView from './features/home/Home.jsx';
 import OurMenu from './features/ourMenu/ourMenuView.jsx';
 import ProfileView from './features/profile/ProfileView';
 import AuthenticationView from './features/auth/AuthenticationView.jsx';
-import CheckoutView from './features/orders/checkoutView.jsx';
+import CheckoutView from './features/orders/CheckoutView.jsx';
 import CheckoutMain from './features/orders/components/CheckoutMain.jsx';
 import Header from './shared/components/Header/Header';
 import ThemeController from './shared/components/app/ThemeController.jsx';
