@@ -6,7 +6,7 @@ export const getProfile = async () => {
 }
 
 export const updateProfile = async (updateData) => {
-     try {
+    try {
         console.log("Sending to API:", updateData);
         const { data } = await api.patch('/user/profile', updateData);
         return data;
@@ -25,3 +25,8 @@ export const markNotificationAsRead = async (notificationId) => {
     const { data } = await api.patch(`/user/notifications/${notificationId}/read`);
     return data;
 };
+
+export const getUserGiftCard = async () => {
+    const { data } = await api.get('/api/giftcards/me');
+    return data;
+}

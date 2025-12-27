@@ -1,4 +1,7 @@
+import { getImageUrl } from "../../../shared/utils/getUrlImage";
+
 const PurchaseItem = ({ item }) => {
+    console.log(item, 'log purchase history')
     return (
         <div className="flex items-center justify-between gap-4 p-4 
                         rounded-xl 
@@ -6,7 +9,7 @@ const PurchaseItem = ({ item }) => {
                         bg-gray-50 dark:bg-zinc-800
                         hover:shadow-md transition-shadow ">
             <img
-                src={item.image}
+                src={getImageUrl(item.image)}
                 alt={item.name}
                 className="w-14 h-14 object-cover rounded-md"
             />

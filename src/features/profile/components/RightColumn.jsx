@@ -6,6 +6,7 @@ import NotificationList from "./NotificationList";
 const RightColumn = ({ sectionsRef }) => {
     const { data: profile, isLoading, isError } = useProfile();
     const purchases = profile?.purchaseHistory;
+    console.log(profile,'log del profile')
 
     return (
         <div className="bg-white dark:bg-zinc-900 shadow-sm rounded-xl p-6 space-y-8">
