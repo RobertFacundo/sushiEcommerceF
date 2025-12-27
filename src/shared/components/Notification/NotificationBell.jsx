@@ -1,6 +1,6 @@
 import { useState, useRef} from 'react';
 import { FiBell } from 'react-icons/fi';
-import NotificationDropDown from './NotificationDropDown';
+import NotificationDropDown from './NotificationDropdown';
 import { useUnreadCount } from '../../hooks/useUnreadCount';
 import { useClickOutside } from '../../hooks/useClickOutside';
 
