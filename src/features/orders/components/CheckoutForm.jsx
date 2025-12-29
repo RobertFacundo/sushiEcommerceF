@@ -3,6 +3,7 @@ import { useCreateCheckoutSession } from "../hooks/useCreateCheckoutSession";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useCart } from "../../cart/hooks/useCart";
+import { motion } from 'framer-motion';
 
 const CheckoutForm = () => {
     const [email, setEmail] = useState('');
@@ -27,7 +28,7 @@ const CheckoutForm = () => {
             },
             {
                 onSuccess: async ({ checkoutUrl }) => {
-                    console.log(checkoutUrl,'checkout url!')
+                    console.log(checkoutUrl, 'checkout url!')
                     if (!checkoutUrl) {
                         console.error('no checkouturl returned');
                         return;
@@ -63,13 +64,15 @@ const CheckoutForm = () => {
                     </p>
                 )}
             </div>
-            <button
+            <motion.button
+                whileTap={{ scale: 0.97 }}
+                whileHover={{ scale: 1.02 }}
                 onClick={handlePay}
                 disabled={isPending || !email || !cart?.cartId}
                 className="w-full py-3 bg-red-500 hover:bg-red-600 rounded-lg font-semibold text-white cursor-pointer"
             >
                 {isPending ? 'Redirecting...' : 'Pay with Stripe'}
-            </button>
+            </motion.button>
 
             <p>
                 You can use Stripe test Cards (e.g.g 4242 4242 4242 4242)

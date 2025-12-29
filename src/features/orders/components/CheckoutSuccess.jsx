@@ -1,7 +1,10 @@
 import { useSearchParams } from "react-router-dom";
 import { useOrder } from "../hooks/useOrder";
+import { motion } from 'framer-motion'
+import { useCheckoutMotion } from "../hooks/useCheckOutMotion";
 
 const CheckoutSuccess = () => {
+    const motionConfig = useCheckoutMotion();
     const [params] = useSearchParams();
     const orderId = params.get("orderId");
 
@@ -30,14 +33,17 @@ const CheckoutSuccess = () => {
     }
     if (data.status === 'paid') {
         return (
-            <div className="space-y-4">
+            <motion.div
+                {...motionConfig.page}
+                className="space-y-4"
+            >
                 <h1 className="text-2xl font-bold text-green-600">Successfull payment!</h1>
                 <p>Your order was successfully confirmed</p>
                 <div className="text-sm opacity-70 space-y-1">
                     <p>Order ID: {orderId}</p>
                     <p>Total: ${data.pricing.total}</p>
                 </div>
-            </div>
+            </motion.div>
         );
     }
 
