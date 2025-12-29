@@ -1,6 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import authService from '../../services/authService';
 
+const tokenFromStorage = localStorage.getItem('token');
+const userFromStorage = localStorage.getItem('user')
+
 export const registerUser = createAsyncThunk(
     "auth/registerUser",
     async (payload, { rejectWithValue }) => {
@@ -26,8 +29,8 @@ export const loginUser = createAsyncThunk(
 );
 
 const initialState = {
-    user: null,
-    token: null,
+    user: userFromStorage ? JSON.parse(userFromStorage) : null,
+    token: tokenFromStorage || null,
     isAuthenticated: false,
     message: '',
     loading: false,
@@ -45,6 +48,9 @@ const authSlice = createSlice({
             state.message = '';
             state.loading = false;
             state.error = null;
+
+            localStorage.removeItem('token');
+            localStorage.removeItem('user')
         },
     },
     extraReducers: (builder) => {
@@ -59,6 +65,9 @@ const authSlice = createSlice({
                 state.token = action.payload.token;
                 state.isAuthenticated = true;
                 state.message = action.payload.message;
+
+                localStorage.setItem('token', action.payload.token);
+                localStorage.setItem('user', JSON.stringify(action.payload.user))
             })
             .addCase(registerUser.rejected, (state, action) => {
                 state.loading = false;
@@ -75,6 +84,9 @@ const authSlice = createSlice({
                 state.token = action.payload.token;
                 state.isAuthenticated = true;
                 state.message = action.payload.message;
+
+                localStorage.setItem('token', action.payload.token);
+                localStorage.setItem('user', JSON.stringify(action.payload.user));
             })
             .addCase(loginUser.rejected, (state, action) => {
                 state.loading = false;

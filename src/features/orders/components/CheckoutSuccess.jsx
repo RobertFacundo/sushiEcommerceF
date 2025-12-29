@@ -41,7 +41,7 @@ const CheckoutSuccess = () => {
                 <p>Your order was successfully confirmed</p>
                 <div className="text-sm opacity-70 space-y-1">
                     <p>Order ID: {orderId}</p>
-                    <p>Total: ${data.pricing.total}</p>
+                    <p>Total: ${data.pricing.total.toFixed(2)}</p>
                 </div>
             </motion.div>
         );
