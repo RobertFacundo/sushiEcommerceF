@@ -17,7 +17,7 @@ export const useCheckOutMotion = () => {
                     y: -12
                 },
                 transition: {
-                    duration: 0.35,
+                    duration: 0.36,
                     ease: 'easeOut'
                 },
             },
