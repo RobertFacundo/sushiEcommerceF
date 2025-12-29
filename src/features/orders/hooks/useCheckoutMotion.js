@@ -14,7 +14,7 @@ export const useCheckoutMotion = () => {
                 },
                 exit: {
                     opacity: 0,
-                    y: -12
+                    y: -13
                 },
                 transition: {
                     duration: 0.35,
