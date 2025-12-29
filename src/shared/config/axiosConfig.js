@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { nanoid } from 'nanoid';
+import { setCartId } from '../utils/cartId';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
@@ -33,7 +34,12 @@ api.interceptors.request.use(
 )
 
 api.interceptors.response.use(
-    (response) => response,
+    (response) => {
+        if (response?.data?.cart?.cartId) {
+            setCartId(response.data.cart.cartId);
+        }
+        return response;
+    },
     (error) => {
         const status = error?.response?.status;
 
