@@ -31,7 +31,7 @@ export const loginUser = createAsyncThunk(
 const initialState = {
     user: userFromStorage ? JSON.parse(userFromStorage) : null,
     token: tokenFromStorage || null,
-    isAuthenticated: false,
+    isAuthenticated: !!tokenFromStorage,
     message: '',
     loading: false,
     error: null,
