@@ -1,11 +1,11 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import CheckoutImage from "./components/CheckoutImage";
-import { useCheckoutMotion } from "./hooks/useCheckOutMotion";
+import { useCheckOutMotion } from "./hooks/useCheckOutMotion";
 
 const CheckoutView = () => {
     const location = useLocation();
-    const motionConfig = useCheckoutMotion();
+    const motionConfig = useCheckOutMotion();
 
     return (
         <section className="min-h-[calc(100vh-4rem)] grid grid-cols-1 md:grid-cols-3 dark:bg-neutral-900">

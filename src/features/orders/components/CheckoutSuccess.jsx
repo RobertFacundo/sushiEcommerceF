@@ -1,10 +1,10 @@
 import { useSearchParams } from "react-router-dom";
 import { useOrder } from "../hooks/useOrder";
 import { motion } from 'framer-motion'
-import { useCheckoutMotion } from "../hooks/useCheckOutMotion";
+import { useCheckOutMotion } from "../hooks/useCheckOutMotion";
 
 const CheckoutSuccess = () => {
-    const motionConfig = useCheckoutMotion();
+    const motionConfig = useCheckOutMotion();
     const [params] = useSearchParams();
     const orderId = params.get("orderId");
 

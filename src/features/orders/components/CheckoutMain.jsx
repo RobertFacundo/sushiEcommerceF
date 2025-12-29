@@ -1,10 +1,10 @@
 import CheckoutForm from "./CheckoutForm";
 import CheckoutSummary from "./CheckoutSummary";
 import { motion } from 'framer-motion';
-import { useCheckoutMotion } from "../hooks/useCheckOutMotion";
+import { useCheckOutMotion } from "../hooks/useCheckOutMotion";
 
 const CheckoutMain = () => {
-    const motionConfig = useCheckoutMotion();
+    const motionConfig = useCheckOutMotion();
 
     return (
         <motion.div {...motionConfig.stagger}>

@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-export const useCheckoutMotion = () => {
+export const useCheckOutMotion = () => {
     return useMemo(() => {
         return {
             page: {
