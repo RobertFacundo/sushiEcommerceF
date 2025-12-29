@@ -1,22 +1,34 @@
 import api from "@shared/config/axiosConfig";
+import { getCartId, setCartId } from "../../../shared/utils/cartId";
 
 export const cartService = {
     getCart: async () => {
-        const response = await api.get('/cart');
-        return response.data;
-    },
-    addItem: ({ productId, quantity = 1 }) =>
-        api.post('/cart/items', { productId, quantity }),
+        const cartId = getCartId();
+        const { data } = await api.get(`/cart?cartId=${cartId}`);
+        if (data.cart?.cartId) setCartId(data.cart.cartId);
 
+        return data.cart;
+    },
+    addItem: async ({ productId, quantity = 1 }) => {
+        const cartId = getCartId();
+        const { data } = await api.post('/cart/items', { productId, quantity, cartId });
+        if (data.cart?.cartId) setCartId(data.cart.cartId);
+
+        return data.cart;
+    },
     updateItem: ({ productId, quantity }) =>
         api.put(`/cart/items/${productId}`, { quantity }),
 
     removeItem: ({ productId }) =>
         api.delete(`/cart/items/${productId}`),
 
-    clearCart: () =>
-        api.delete('/cart'),
-
+    clearCart: async () => {
+        const cartId = getCartId();
+        const { data } = await api.delete(`/cart/items?cartId=${cartId}`);
+        if (data.cart?.cartId) setCartId(data.cart.cartId);
+        
+        return data.cart;
+    },
     mergeCart: () =>
         api.post('/cart/merge')
 }
