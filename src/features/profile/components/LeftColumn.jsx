@@ -6,7 +6,8 @@ import { useUpdateProfile } from "../hooks/useUpdateProfile";
 import PasswordInputField from "./PasswordInputField";
 import GiftCard from "./GiftCard";
 import AvatarSelector from "./AvatarSelector";
-import { useProfileGiftCard } from '../hooks/useProfileGiftCard'
+import { useProfileGiftCard } from '../hooks/useProfileGiftCard';
+import Loader from "../../../shared/components/app/Loader";
 
 const LeftColumn = ({ profile, giftCardRef }) => {
     const updateProfileMutation = useUpdateProfile();
@@ -17,6 +18,11 @@ const LeftColumn = ({ profile, giftCardRef }) => {
 
     return (
         <>
+            {isLoading && (
+                <div className="flex justify-center py-6">
+                    <Loader className="text-neutral-500 dark:text-neutral-300" />
+                </div>
+            )}
             {!isLoading && giftCard && <GiftCard ref={giftCardRef} code={giftCard.code} description="Use this gift card for your next purchase!" />}
             <div className="bg-white dark:bg-zinc-900 shadow-sm rounded-xl p-6 h-fit space-y-6">
                 <div className="flex items-center justify-between gap-8">

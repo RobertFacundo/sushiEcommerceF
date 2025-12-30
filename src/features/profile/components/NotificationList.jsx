@@ -1,6 +1,7 @@
 import NotificationItem from "./NotificationItem";
 import { useNotificationActions } from "../../../shared/hooks/useNotificationsActions";
 import { useSortedNotifications } from "../../../shared/hooks/useSortedNotifications";
+import Loader from "../../../shared/components/app/Loader";
 
 const NotificationList = () => {
     const { sortedNotifications, isLoading } = useSortedNotifications();
@@ -14,7 +15,11 @@ const NotificationList = () => {
                     Send Test Notification
                 </button>
             </div>
-            {isLoading && <p className="text-sm text-gray-500">Loading...</p>}
+            {isLoading && (
+                <div className="flex justify-center py-4">
+                    <Loader className="text-neutral-400 dark:text-neutral-300 scale-75" />
+                </div>
+            )}
             {!isLoading && sortedNotifications.length === 0 && (
                 <p className="text-sm text-gray-500">No notifications yet</p>
             )}
