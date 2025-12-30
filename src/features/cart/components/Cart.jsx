@@ -7,6 +7,7 @@ import { calculateSubtotal } from "../utils/cartTotals";
 import { FaBroom } from 'react-icons/fa';
 import { AnimatePresence } from 'framer-motion';
 import { useNavigate } from "react-router-dom";
+import Loader from "../../../shared/components/app/Loader";
 
 const Cart = () => {
     const { data: cart, isLoading } = useCart();
@@ -14,12 +15,16 @@ const Cart = () => {
     const { mutate: removeItem } = useRemoveCartItem();
     const { mutate: clearCart } = useClearCart();
 
-    console.log(cart,'log del cart.jsx')
+    console.log(cart, 'log del cart.jsx')
 
     const navigate = useNavigate();
 
     if (isLoading) {
-        return <p>Loading cart...</p>;
+        return (
+            <div className="flex justify-center items-center min-h-[300px]">
+                <Loader className="dark:text-white text-black scale-110" />
+            </div>
+        )
     }
 
     return (

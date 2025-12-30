@@ -1,7 +1,8 @@
 import { AnimatePresence } from 'framer-motion';
 import BaseCard from './BaseCard.jsx'
 import { useCategories, useProductsByCategory } from '../hooks/useOurMenu';
-import { useAddToCart } from '../../cart/hooks/useAddToCart.js'
+import { useAddToCart } from '../../cart/hooks/useAddToCart.js';
+import Loader from '../../../shared/components/app/Loader.jsx';
 
 const List = ({ mode, selectedCategory, onSelectCategory }) => {
     const isCategories = mode === 'categories';
@@ -9,7 +10,11 @@ const List = ({ mode, selectedCategory, onSelectCategory }) => {
 
     const { mutate: addToCart } = useAddToCart()
 
-    if (isLoading) return <p>Loading...</p>
+    if (isLoading) return (
+        <div className='flex justify-center items-center py-16'>
+            <Loader className='dark:text-white scale-125 text-black' />
+        </div>
+    )
     if (error) return <p>Error loading data...</p>;
 
     return (
