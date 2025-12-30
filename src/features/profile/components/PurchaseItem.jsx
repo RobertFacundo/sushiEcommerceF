@@ -9,7 +9,7 @@ const PurchaseItem = ({ item }) => {
                         bg-gray-50 dark:bg-zinc-800
                         hover:shadow-md transition-shadow ">
             <img
-                src={getImageUrl(item.imageUrl)}
+                src={getImageUrl(item.image)}
                 alt={item.name}
                 className="w-14 h-14 object-cover rounded-md"
             />
