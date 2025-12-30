@@ -26,11 +26,9 @@ export const cartService = {
         api.delete(`/cart/items/${productId}`),
 
     clearCart: async () => {
-        const cartId = getCartId();
-        const { data } = await api.delete(`/cart/items?cartId=${cartId}`);
+        const { data } = await api.delete(`/cart`);
         if (data?.cartId) setCartId(data?.cartId);
-        
-        return data.cart;
+        return data;
     },
     mergeCart: () =>
         api.post('/cart/merge')
