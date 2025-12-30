@@ -5,6 +5,8 @@ export const cartService = {
     getCart: async () => {
         const cartId = getCartId();
         const { data } = await api.get(`/cart?cartId=${cartId}`);
+
+        console.log(data, 'log del get cart service')
         if (data.cart?.cartId) setCartId(data.cart.cartId);
 
         return data.cart;

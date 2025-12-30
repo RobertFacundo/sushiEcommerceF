@@ -14,6 +14,8 @@ const Cart = () => {
     const { mutate: removeItem } = useRemoveCartItem();
     const { mutate: clearCart } = useClearCart();
 
+    console.log(cart,'log del cart.jsx')
+
     const navigate = useNavigate();
 
     if (isLoading) {
