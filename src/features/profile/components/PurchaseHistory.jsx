@@ -11,7 +11,7 @@ const PurchaseHistory = ({ purchases }) => {
     }
 
     return (
-        <div className="space-y-4">
+        <div className="space-y-4 max-h-70 overflow-y-auto">
             {purchases.map((item, index) => (
                 <PurchaseItem key={index} item={item} />
             ))}
