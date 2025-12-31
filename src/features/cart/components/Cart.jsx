@@ -29,9 +29,9 @@ const Cart = () => {
 
     return (
         <div
-            className="flex flex-col h-full">
+            className="flex flex-col h-full z-0">
             <header className="pb-4 border-b border-neutral-700 flex items-center justify-between">
-                <h1 className="text-xl font-semibold dark:text-white">
+                <h1 className="text-xl font-semibold dark:text-white ">
                     Your Cart
                 </h1>
 

@@ -76,4 +76,8 @@ html {
   }
 }
 
+:root {
+  --header-h: 59px; /* o lo que mida tu header */
+}
+
 

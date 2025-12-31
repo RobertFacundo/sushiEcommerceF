@@ -13,7 +13,7 @@ const OurMenu = () => {
     const { variants } = useCartAnimation();
 
     return (
-        <div className="flex w-full min-h-screen dark:bg-neutral-900">
+        <div className="flex w-full min-h-screen dark:bg-neutral-900 z-0">
             <div className="w-full lg:w-2/3 p-6 min-h-screen">
                 <Breadcrumb
                     selectedCategory={selectedCategory}

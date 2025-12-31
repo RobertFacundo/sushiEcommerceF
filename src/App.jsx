@@ -10,6 +10,8 @@ import ThemeController from './shared/components/app/ThemeController.jsx';
 import { Toaster } from 'sonner';
 import CheckoutSuccess from './features/orders/components/CheckoutSuccess.jsx';
 import CheckoutCancel from './features/orders/components/CheckoutCancel.jsx';
+import AppLayout from './shared/components/app/AppLayout.jsx';
+import Footer from './shared/components/Footer/Footer.jsx';
 
 function App() {
 
@@ -18,19 +20,24 @@ function App() {
       <ThemeController />
       <Toaster richColors position='top-right' />
 
-      <Header />
-      <Routes>
-        <Route path='/' element={<HomeView />} />
-        <Route path='/OurMenu' element={<OurMenu />} />
-        <Route path='/Profile' element={<ProfileView />} />
-        <Route path='/Authentication' element={<AuthenticationView />} />
+      <AppLayout>
+        <Header />
+        <main className='relative z-10'>
+          <Routes>
+            <Route path='/' element={<HomeView />} />
+            <Route path='/OurMenu' element={<OurMenu />} />
+            <Route path='/Profile' element={<ProfileView />} />
+            <Route path='/Authentication' element={<AuthenticationView />} />
 
-        <Route path='/checkout' element={<CheckoutView />}>
-          <Route index element={<CheckoutMain />} />
-          <Route path='success' element={<CheckoutSuccess />} />
-          <Route path='cancel' element={<CheckoutCancel />} />
-        </Route>
-      </Routes>
+            <Route path='/checkout' element={<CheckoutView />}>
+              <Route index element={<CheckoutMain />} />
+              <Route path='success' element={<CheckoutSuccess />} />
+              <Route path='cancel' element={<CheckoutCancel />} />
+            </Route>
+          </Routes>
+        </main>
+        <Footer />
+      </AppLayout>
     </>
   )
 }
