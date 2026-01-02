@@ -22,7 +22,7 @@ function App() {
 
       <AppLayout>
         <Header />
-        <main className='relative z-10'>
+        <main className='relative z-10 flex-1 dark:bg-neutral-950'>
           <Routes>
             <Route path='/' element={<HomeView />} />
             <Route path='/OurMenu' element={<OurMenu />} />

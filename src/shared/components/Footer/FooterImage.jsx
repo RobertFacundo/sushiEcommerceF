@@ -1,6 +1,12 @@
+import { motion } from "framer-motion";
+import { footerImage } from "./footerAnimation";
+
 const FooterImage = () => {
     return (
-        <div
+        <motion.div
+            variants={footerImage}
+            initial="hidden"
+            animate="visible"
             className="
         hidden lg:block
         absolute top-0 right-0
