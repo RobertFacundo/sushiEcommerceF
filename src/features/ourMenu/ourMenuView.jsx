@@ -30,7 +30,7 @@ const OurMenu = ({isCartOpen}) => {
                     initial='hidden'
                     animate='visible'
                     exit='exit'
-                    variants={variants} className="hidden lg:block w-1/3  dark:bg-black p-6 shadow-inner fixed right-0 top-15 h-screen">
+                    variants={variants} className="hidden lg:block w-1/3  dark:bg-black bg-white p-6 shadow-inner fixed right-0 top-15 h-screen">
                     <Cart />
                 </motion.div>
             </AnimatePresence>
