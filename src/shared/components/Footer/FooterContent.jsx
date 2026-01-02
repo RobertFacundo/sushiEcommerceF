@@ -11,7 +11,9 @@ const FooterContent = () => {
                 grid-cols-1
                 md:grid-cols-[2fr_1fr_1fr]
                 gap-12
-                w-full"
+                w-full
+                text-center md:text-left
+                "
         >
             <motion.div variants={footerColumn}>
                 <FooterProfile />

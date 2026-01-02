@@ -3,11 +3,11 @@ import { footerItem } from "./footerAnimation";
 import { footerSocialLinks } from "../../config/footerSocial";
 
 const FooterSocial = () => (
-  <div className="mt-12">
+  <div className="mt-12 text-center">
     <motion.h4 variants={footerItem} className="text-lg font-medium mb-4">
       Contact
     </motion.h4>
-    <div className="flex gap-4">
+    <div className="flex gap-4 justify-center md:justify-start">
       {footerSocialLinks.map(({ name, href, icon: Icon }) => (
         <motion.a
           key={name}

@@ -33,14 +33,18 @@ const Footer = () => {
                 max-w-7xl mx-auto
                 grid grid-cols-1 lg:grid-cols-3
                 gap-12
-                
+                px-4 sm:px lg:px-0
                 "
             >
                 <div className="lg:col-span-2 flex items-center h-full">
                     <FooterContent />
                 </div>
             </div>
-            {!hiddenImageOnMenu && <FooterImage />}
+            {!hiddenImageOnMenu && (
+                <div className="hidden lg:block">
+                    <FooterImage />
+                </div>
+            )}
         </motion.footer>
     )
 };

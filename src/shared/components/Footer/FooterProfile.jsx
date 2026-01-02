@@ -24,7 +24,7 @@ const FooterProfile = () => (
         </motion.div>
 
         {/* Description full width */}
-        <motion.p variants={footerItem} className="text-sm text-neutral-600 text-center dark:text-neutral-400 leading-relaxed">
+        <motion.p variants={footerItem} className="text-sm text-neutral-600 text-center dark:text-neutral-400 leading-relaxed text-center max-w-md mx-auto md:mx-0 tracking-wide">
             Fullstack Developer especializado en React y Node.js.<br />
             Desarrollo proyectos full-stack aplicando buenas prácticas,
             arquitectura clara y niveles de abstracción profesionales.
@@ -39,7 +39,7 @@ const FooterProfile = () => (
                 rel="noopener noreferrer"
                 className="text-sm font-medium text-neutral-800 dark:text-neutral-200 hover:underline"
             >
-              Portfolio
+                Portfolio
             </a>
         </motion.div>
     </div>
