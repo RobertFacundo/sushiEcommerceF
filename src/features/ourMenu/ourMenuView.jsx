@@ -30,7 +30,8 @@ const OurMenu = ({isCartOpen}) => {
                     initial='hidden'
                     animate='visible'
                     exit='exit'
-                    variants={variants} className="hidden lg:block w-1/3  dark:bg-black bg-white p-6 shadow-inner fixed right-0 top-15 h-screen">
+                    variants={variants} 
+                    className="hidden lg:block w-1/3  dark:bg-black bg-white p-6 shadow-inner fixed right-0 top-15 h-screen">
                     <Cart />
                 </motion.div>
             </AnimatePresence>
@@ -41,7 +42,7 @@ const OurMenu = ({isCartOpen}) => {
                         animate={{ y: 0 }}
                         exit={{ y: "100%" }}
                         transition={{ type: "spring", damping: 25 }}
-                        className="fixed inset-0 z-50 bg-black/50 lg:hidden"
+                        className="fixed inset-0 z-50 lg:hidden"
                     >
                         <div
                             onClick={(e) => e.stopPropagation()}
