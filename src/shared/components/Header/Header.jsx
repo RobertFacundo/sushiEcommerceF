@@ -6,10 +6,14 @@ import ThemeToggle from './ThemeToggle';
 import NotificationBell from "../Notification/NotificationBell";
 import { useSelector } from "react-redux";
 import CartButton from "./CartButton";
+import { useLocation } from "react-router-dom";
 
-const Header = ({setIsCartOpen}) => {
+const Header = ({ setIsCartOpen }) => {
     const [isOpen, setIsOpen] = useState(false);
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
+
+    const location = useLocation();
+    const showCartButton = location.pathname === "/OurMenu";
 
     const headerClasses = "bg-white dark:bg-[#0d0d0d] sticky top-0 z-50 transition-colors duration-300 shadow-md dark:shadow-none";
 
@@ -25,7 +29,7 @@ const Header = ({setIsCartOpen}) => {
                     {isAuthenticated && <NotificationBell />}
                 </div>
                 <ThemeToggle size={24} />
-                <CartButton setIsCartOpen={setIsCartOpen}/>
+                {showCartButton && <CartButton setIsCartOpen={setIsCartOpen} />}
                 <div className="md:hidden">
                     <BurgerButton isOpen={isOpen} setIsOpen={setIsOpen} />
                 </div>

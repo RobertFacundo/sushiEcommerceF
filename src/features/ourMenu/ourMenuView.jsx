@@ -5,7 +5,7 @@ import Breadcrumb from './components/Breadcrumb.jsx';
 import { motion, AnimatePresence } from "framer-motion";
 import { useCartAnimation } from "../cart/hooks/useCartAnimation.js";
 
-const OurMenu = ({isCartOpen, setIsCartOpen}) => {
+const OurMenu = ({isCartOpen}) => {
     const [selectedCategory, setSelectedCategory] = useState(null);
 
     const isShowingCategories = selectedCategory === null;
@@ -42,7 +42,6 @@ const OurMenu = ({isCartOpen, setIsCartOpen}) => {
                         exit={{ y: "100%" }}
                         transition={{ type: "spring", damping: 25 }}
                         className="fixed inset-0 z-50 bg-black/50 lg:hidden"
-                        onClick={() => setIsCartOpen(false)}
                     >
                         <div
                             onClick={(e) => e.stopPropagation()}
