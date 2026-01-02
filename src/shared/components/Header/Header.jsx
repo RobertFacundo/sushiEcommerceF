@@ -13,7 +13,7 @@ const Header = ({ setIsCartOpen }) => {
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
 
     const location = useLocation();
-    const showCartButton = location.pathname === "/OurMenu";
+    const showCartButton = location.pathname === "/ourmenu";
 
     const headerClasses = "bg-white dark:bg-[#0d0d0d] sticky top-0 z-50 transition-colors duration-300 shadow-md dark:shadow-none";
 
