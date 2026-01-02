@@ -14,6 +14,7 @@ import AppLayout from './shared/components/app/AppLayout.jsx';
 import Footer from './shared/components/Footer/Footer.jsx';
 
 function App() {
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
     <>
@@ -21,11 +22,11 @@ function App() {
       <Toaster richColors position='top-right' />
 
       <AppLayout>
-        <Header />
+        <Header isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
         <main className='relative z-10 flex-1 dark:bg-neutral-950'>
           <Routes>
             <Route path='/' element={<HomeView />} />
-            <Route path='/OurMenu' element={<OurMenu />} />
+            <Route path='/OurMenu' element={<OurMenu isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />} />
             <Route path='/Profile' element={<ProfileView />} />
             <Route path='/Authentication' element={<AuthenticationView />} />
 
