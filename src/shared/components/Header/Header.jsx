@@ -7,7 +7,7 @@ import NotificationBell from "../Notification/NotificationBell";
 import { useSelector } from "react-redux";
 import CartButton from "./CartButton";
 
-const Header = ({isCartOpen, setIsCartOpen}) => {
+const Header = ({setIsCartOpen}) => {
     const [isOpen, setIsOpen] = useState(false);
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
 

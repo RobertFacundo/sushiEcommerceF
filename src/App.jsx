@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 import HomeView from './features/home/Home.jsx';
 import OurMenu from './features/ourMenu/ourMenuView.jsx';
 import ProfileView from './features/profile/ProfileView';
@@ -22,7 +23,7 @@ function App() {
       <Toaster richColors position='top-right' />
 
       <AppLayout>
-        <Header isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+        <Header setIsCartOpen={setIsCartOpen} />
         <main className='relative z-10 flex-1 dark:bg-neutral-950'>
           <Routes>
             <Route path='/' element={<HomeView />} />
