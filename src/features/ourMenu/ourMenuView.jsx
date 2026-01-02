@@ -52,6 +52,7 @@ const OurMenu = ({isCartOpen}) => {
                             w-full
                             h-[90vh]
                             dark:bg-black
+                            bg-white
                             p-6
                             rounded-t-2xl
                             "
