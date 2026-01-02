@@ -1,16 +1,21 @@
-import { useState, useRef} from 'react';
+import { useState, useRef } from 'react';
 import { FiBell } from 'react-icons/fi';
 import NotificationDropDown from './NotificationDropdown';
 import { useUnreadCount } from '../../hooks/useUnreadCount';
 import { useClickOutside } from '../../hooks/useClickOutside';
+import { useIsMobile } from '../../hooks/useIsMobile';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const NotificationBell = () => {
     const { unreadCount, isLoading } = useUnreadCount();
+    const isMobile = useIsMobile()
 
     const [open, setOpen] = useState(false);
     const wrapperRef = useRef(null);
 
-    useClickOutside(wrapperRef, ()=>setOpen(false));
+    useClickOutside(wrapperRef, () => {
+        if (!isMobile) setOpen(false)
+    });
 
     return (
         <div ref={wrapperRef} className='relative'>
@@ -28,9 +33,33 @@ const NotificationBell = () => {
                     </span>
                 )}
             </button>
-            <div className={`absolute right-0 mt-2 z-30 transform transition-all duration-900 ${open ? "scale-100 opacity-100 " : "scale-90 opacity-0 pointer-events-none"}`}>
-                <NotificationDropDown close={() => setOpen(false)} />
-            </div>
+            {!isMobile && (
+                <div className={`absolute right-4 mt-2 z-30 transform transition-all duration-900 ${open ? "scale-100 opacity-100 " : "scale-90 opacity-0 pointer-events-none"}`}>
+                    <NotificationDropDown close={() => setOpen(false)} />
+                </div>
+            )}
+            <AnimatePresence>
+                {isMobile && open && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 bg-black/40"
+                        onClick={() => setOpen(false)}
+                    >
+                        <motion.div
+                            initial={{ y: "100%" }}
+                            animate={{ y: 0 }}
+                            exit={{ y: "100%" }}
+                            transition={{ type: "spring", damping: 25 }}
+                            onClick={e => e.stopPropagation()}
+                            className="absolute bottom-0 w-full h-[80vh] bg-white dark:bg-zinc-900 rounded-t-2xl p-4"
+                        >
+                            <NotificationDropDown close={() => setOpen(false)} />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     )
 };

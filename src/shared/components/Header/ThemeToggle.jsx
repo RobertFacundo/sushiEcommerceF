@@ -16,8 +16,9 @@ const ThemeToggle = ({ size = 24 }) => {
             aria-label={`Change theme ${currentTheme === 'dark' ? 'light' : 'dark'}`}
             className={`
                 p-2 rounded-full transition-colors duration-300
-                text-gray-900 dark:text-gray-200 
-                hover:bg-gray-200 dark:hover:bg-gray-800
+                text-black dark:text-white
+                hover:bg-red-500 dark:hover:bg-red-500
+                hover:text-white
                 cursor-pointer
             `}
         >
