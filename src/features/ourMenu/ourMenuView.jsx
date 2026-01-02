@@ -50,7 +50,7 @@ const OurMenu = ({isCartOpen}) => {
                             bottom-0
                             w-full
                             h-[90vh]
-                            bg-neutral-900
+                            dark:bg-black
                             p-6
                             rounded-t-2xl
                             "
