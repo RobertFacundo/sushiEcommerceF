@@ -10,27 +10,27 @@ export const heroBanners = [
     id: 1,
     lightImage: bannerLight,
     darkImage: bannerDark,
-    title: "Sushi premium todos los días",
-    subtitle: "Ingredientes frescos y preparados al momento",
-    ctaText: "Ver menú",
+    title: "hero.banner1.title",
+    subtitle: "hero.banner1.subtitle",
+    ctaText: "hero.banner1.cta",
     ctaLink: "/ourMenu"
   },
   {
     id: 2,
     lightImage: bannerLightII,
     darkImage: bannerDarkII,
-    title: "Ramen auténtico japonés",
-    subtitle: "Sabores intensos, calidez real",
-    ctaText: "Explorar platos",
+    title: "hero.banner2.title",
+    subtitle: "hero.banner2.subtitle",
+    ctaText: "hero.banner2.cta",
     ctaLink: "/ourMenu"
   },
   {
     id: 3,
     lightImage: bannerLightIII,
     darkImage: bannerDarkIII,
-    title: "Promociones exclusivas",
-    subtitle: "Combos, descuentos y especiales semanales",
-    ctaText: "Ir al menú",
+    title: "hero.banner3.title",
+    subtitle: "hero.banner3.subtitle",
+    ctaText: "hero.banner3.cta",
     ctaLink: "/ourMenu"
   }
 ];

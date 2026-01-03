@@ -8,8 +8,10 @@ import GiftCard from "./GiftCard";
 import AvatarSelector from "./AvatarSelector";
 import { useProfileGiftCard } from '../hooks/useProfileGiftCard';
 import Loader from "../../../shared/components/app/Loader";
+import { useTranslation } from "react-i18next";
 
 const LeftColumn = ({ profile, giftCardRef }) => {
+    const { t } = useTranslation();
     const updateProfileMutation = useUpdateProfile();
     const { data: giftCard, isLoading } = useProfileGiftCard()
     const [avatar, setAvatar] = useState(profile.avatar ?? '/avatar.jpg')
@@ -26,7 +28,9 @@ const LeftColumn = ({ profile, giftCardRef }) => {
             {!isLoading && giftCard && <GiftCard ref={giftCardRef} code={giftCard.code} description="Use this gift card for your first purchase!" />}
             <div className="bg-white dark:bg-zinc-900 shadow-sm rounded-xl p-6 h-fit space-y-6">
                 <div className="flex items-center justify-between gap-8">
-                    <StyledTitle>Account Details</StyledTitle>
+                    <StyledTitle>
+                        {t("profile.accountDetails")}
+                    </StyledTitle>
                     <AvatarSelector
                         currentAvatar={avatar}
                         onChange={(newAvatar) => {
@@ -39,7 +43,7 @@ const LeftColumn = ({ profile, giftCardRef }) => {
                     createdAt={profile.createdAt}
                 />
                 <EditableField
-                    label='Full Name'
+                    labelKey='profile.fullname'
                     value={profile.name}
                     onSave={(newValue) => {
                         console.log("Clicked Save with:", newValue);
@@ -48,7 +52,7 @@ const LeftColumn = ({ profile, giftCardRef }) => {
                     loading={updateProfileMutation.isLoading}
                 />
                 <EditableField
-                    label="email"
+                    labelKey="profile.email"
                     value={profile.email}
                     onSave={(newValue) => {
                         updateProfileMutation.mutate({ email: newValue });

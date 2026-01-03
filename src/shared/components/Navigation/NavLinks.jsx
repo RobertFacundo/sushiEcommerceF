@@ -1,8 +1,10 @@
 import { getFilteredLinks } from "../../config/navLinks";
 import GenericNavLink from "./GenericNavLink";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const NavLinks = ({ isMobile = false }) => {
+    const { t } = useTranslation();
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
     const links = getFilteredLinks(isAuthenticated)
 
@@ -12,7 +14,7 @@ const NavLinks = ({ isMobile = false }) => {
                 <GenericNavLink
                     key={link.url}
                     url={link.url}
-                    name={link.name}
+                    name={t(link.labelKey)}
                     activeClass="bg-gradient-to-t"
                     hoverClass="hover:bg-gradient-to-t"
                 />

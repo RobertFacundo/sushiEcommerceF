@@ -1,10 +1,13 @@
+import { useTranslation } from "react-i18next";
 import { getImageUrl } from "../../../shared/utils/getUrlImage";
 import { useCartItemAnimation } from "../hooks/useCartAnimation";
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion';
 
 const CartItem = ({ item, onUpdate, onRemove }) => {
+    const { i18n, t } = useTranslation();
     const { productId, quantity } = item;
     const total = productId.price * quantity
+    const lang = i18n.language;
 
     const { itemVariants } = useCartItemAnimation()
 
@@ -22,7 +25,7 @@ const CartItem = ({ item, onUpdate, onRemove }) => {
 
             <div className="flex-1">
                 <h3 className="font-medium text-gray-800 dark:text-white">
-                    {productId.name.es}
+                    {productId.name[lang]}
                 </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
                     ${productId.price}
@@ -45,7 +48,7 @@ const CartItem = ({ item, onUpdate, onRemove }) => {
             <button
                 onClick={() => onRemove(productId._id)}
                 className="text-gray-400 hover:text-red-500 transition-colors text-lg cursor-pointer"
-                aria-label="Remove item"
+                aria-label={t("cart.removeItem")}
             >
                 ✕
             </button>

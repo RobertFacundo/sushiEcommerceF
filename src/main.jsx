@@ -6,7 +6,8 @@ import { BrowserRouter } from 'react-router-dom'
 import { store } from './shared/redux/store.js'
 import { Provider } from 'react-redux'
 import { QueryClientProvider } from '@tanstack/react-query';
-import { queryClient } from './shared/config/queryConfig.js'
+import { queryClient } from './shared/config/queryConfig.js';
+import './shared/i18n'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

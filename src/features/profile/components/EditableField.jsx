@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import StyledParagraph from '../../../shared/components/Paragraphs/StyledParagraph';
 import GradientTextButton from '../../../shared/components/Buttons/GradientTextButton';
+import { useTranslation } from 'react-i18next';
 
 const EditableField = ({
-    label,
+    labelKey,
     value,
     type = 'text',
     onSave
 }) => {
+    const { t } = useTranslation();
     const [isEditing, setIsEditing] = useState(false);
     const [inputValue, setInputValue] = useState(value);
     const [error, setError] = useState(null);
@@ -18,7 +20,7 @@ const EditableField = ({
 
     const handleSave = () => {
         if (inputValue.trim() === '') {
-            setError('Field can not be empty');
+            setError(t("profile.errors.emptyField"));
             return;
         }
 
@@ -38,7 +40,7 @@ const EditableField = ({
     return (
         <div className="flex flex-col space-y-1">
             <label className="text-sm text-gray-500 dark:text-gray-400">
-                {label}
+                {t(labelKey)}
             </label>
             {!isEditing && (
                 <div className="flex items-center justify-between">
@@ -49,7 +51,7 @@ const EditableField = ({
                     <GradientTextButton
                         onClick={() => setIsEditing(true)}
                     >
-                        Edit
+                        {t("profile.edit")}
                     </GradientTextButton>
                 </div>
             )}
@@ -71,13 +73,13 @@ const EditableField = ({
                             onClick={handleSave}
                             className="px-3 py-1 bg-red-600 text-white rounded-md text-sm cursor-pointer"
                         >
-                            Save
+                            {t('profile.save')}
                         </button>
                         <button
                             onClick={handleCancel}
                             className="px-3 py-1 bg-gray-300 dark:bg-neutral-700 rounded-md text-sm cursor-pointer"
                         >
-                            Cancel
+                            {t('profile.cancel')}
                         </button>
                     </div>
                 </div>

@@ -1,0 +1,100 @@
+{
+  "hero": {
+    "banner1": {
+      "title": "Sushi premium todos los días",
+      "subtitle": "Ingredientes frescos y preparados al momento",
+      "cta": "Ver menú"
+    },
+    "banner2": {
+      "title": "Ramen auténtico japonés",
+      "subtitle": "Sabores intensos, calidez real",
+      "cta": "Explorar platos"
+    },
+    "banner3": {
+      "title": "Promociones exclusivas",
+      "subtitle": "Combos, descuentos y especiales semanales",
+      "cta": "Ir al menú"
+    }
+  },
+  "nav": {
+    "home": "Inicio",
+    "menu": "Nuestro Menú",
+    "profile": "Perfil",
+    "auth": "Ingresar"
+  },
+  "footer": {
+    "profile": {
+      "description": "Fullstack Developer especializado en React y Node.js.\n Desarrollo proyectos full-stack aplicando buenas prácticas,\narquitectura clara y niveles de abstracción profesionales.",
+      "websiteLabel": "Sitio web",
+      "portfolio": "Portafolio"
+    },
+    "links": {
+      "title": "Más proyectos"
+    },
+    "contact": {
+      "title": "Contacto"
+    }
+  },
+  "common": {
+    "outOfStock": "SIN STOCK",
+    "errorLoading": "Error al cargar los datos..."
+  },
+  "cart": {
+    "title": "Tu carrito",
+    "emptyTitle": "Tu carrito está vacío",
+    "emptySubtitle": "Agregá algo delicioso 🍣",
+    "clear": "Vaciar carrito",
+    "subtotal": "Subtotal",
+    "checkout": "Finalizar compra",
+    "removeItem": "Eliminar producto"
+  },
+  "authentication": {
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "switchToRegister": "¿No tenés una cuenta?",
+    "switchToLogin": "¿Ya tenés una cuenta?",
+    "error": "Algo salió mal. Intentalo nuevamente.",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña"
+  },
+  "profile": {
+    "loading": "Cargando perfil...",
+    "error": "Error al cargar los datos del perfil.",
+    "accountDetails": "Detalles de la cuenta",
+    "fullName": "Nombre completo",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "edit": "Editar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "userSince": "Usuario desde {{date}}",
+    "errors": {
+      "emptyField": "El campo no puede estar vacío"
+    },
+    "notifications": "Notificaciones",
+    "purchaseHistory": "Historial de Compras",
+    "purchaseHistoryError": "No se pudo cargar el historial de compras...",
+    "sendTestNotification": "Enviar notificación de prueba",
+    "noNotifications": "Todavía no hay notificaciones",
+    "markAsRead": "Marcar como leída",
+    "read": "Leída",
+    "noPurchases": "Todavía no hay compras"
+  },
+  "checkout": {
+    "emptyCart": "Tu carrito está vacío",
+    "orderSummary": "Resumen del pedido",
+    "subtotal": "Subtotal",
+    "processingTitle": "Procesando el pago",
+    "processingDesc": "Estamos confirmando tu pedido",
+    "confirmingTitle": "Confirmando el pago",
+    "confirmingDesc": "Esto puede tardar unos segundos...",
+    "successTitle": "¡Pago exitoso!",
+    "successDesc": "Tu pedido fue confirmado correctamente",
+    "orderId": "ID del pedido",
+    "total": "Total",
+    "error": "Error al cargar el pedido",
+    "unknown": "Estado desconocido del pedido"
+  }
+}

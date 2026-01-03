@@ -1,11 +1,14 @@
+import { useTranslation } from "react-i18next";
 import StyledParagraph from "../../../shared/components/Paragraphs/StyledParagraph";
 import PurchaseItem from "./PurchaseItem";
 
 const PurchaseHistory = ({ purchases }) => {
+    const { t } = useTranslation();
+
     if (!purchases || purchases.length === 0) {
         return (
             <StyledParagraph>
-                No purchases yet!
+                {t('profile.noPurchases')}
             </StyledParagraph>
         );
     }

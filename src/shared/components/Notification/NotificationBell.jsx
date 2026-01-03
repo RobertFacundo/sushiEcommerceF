@@ -22,9 +22,9 @@ const NotificationBell = () => {
             <button
                 aria-label="Notifications"
                 onClick={() => setOpen(v => !v)}
-                className="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-800 transition cursor-pointer ml-2"
+                className="relative p-2 rounded-full hover:bg-red-500 dark:hover:bg-zinc-800 transition cursor-pointer ml-2"
             >
-                <FiBell className="w-6 h-6 text-gray-700 dark:text-gray-200" />
+                <FiBell className="w-6 h-6 text-black hover:text-white dark:text-gray-200" />
 
                 {(!isLoading && unreadCount > 0) && (
                     <span className="absolute -top-0.5 -right-0.5 bg-red-500 text-white 

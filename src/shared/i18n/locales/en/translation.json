@@ -1,0 +1,99 @@
+{
+  "hero": {
+    "banner1": {
+      "title": "Premium sushi every day",
+      "subtitle": "Fresh ingredients, made to order",
+      "cta": "View menu"
+    },
+    "banner2": {
+      "title": "Authentic Japanese ramen",
+      "subtitle": "Deep flavors, real warmth",
+      "cta": "Explore dishes"
+    },
+    "banner3": {
+      "title": "Exclusive promotions",
+      "subtitle": "Combos, discounts and weekly specials",
+      "cta": "Go to menu"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "menu": "Our Menu",
+    "profile": "Profile",
+    "auth": "Sign in"
+  },
+  "footer": {
+    "profile": {
+      "description": "Fullstack Developer specialized in React and Node.js.\n I build full-stack projects applying best practices,\nclean architecture and professional abstraction levels.",
+      "websiteLabel": "Website",
+      "portfolio": "Portfolio"
+    },
+    "links": {
+      "title": "More projects"
+    },
+    "contact": {
+      "title": "Contact"
+    }
+  },
+  "common": {
+    "outOfStock": "OUT OF STOCK",
+    "errorLoading": "Error loading data..."
+  },
+  "cart": {
+    "title": "Your Cart",
+    "emptyTitle": "Your cart is empty",
+    "emptySubtitle": "Add some delicious items 🍣",
+    "clear": "Clear cart",
+    "subtotal": "Subtotal",
+    "checkout": "Check Out",
+    "removeItem": "Remove item"
+  },
+  "authentication": {
+    "login": "Login",
+    "register": "Register",
+    "switchToRegister": "Don't have an account?",
+    "switchToLogin": "Already have an account?",
+    "error": "Something went wrong. Please try again.",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password"
+  },
+  "profile": {
+    "loading": "Loading profile...",
+    "error": "Error loading profile data.",
+    "accountDetails": "Account Details",
+    "fullName": "Full Name",
+    "email": "Email",
+    "password": "Password",
+    "edit": "Edit",
+    "save": "Save",
+    "userSince": "User since {{date}}",
+    "errors": {
+      "emptyField": "Field cannot be empty"
+    },
+    "notifications": "Notifications",
+    "purchaseHistory": "Purchase History",
+    "purchaseHistoryError": "Failed to load purchase history...",
+    "sendTestNotification": "Send Test Notification",
+    "noNotifications": "No notifications yet",
+    "markAsRead": "Mark as read",
+    "read": "Read",
+    "noPurchases": "No purchases yet"
+  },
+  "checkout": {
+    "emptyCart": "Your cart is empty",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "processingTitle": "Processing payment",
+    "processingDesc": "We are confirming the order!",
+    "confirmingTitle": "Confirming payment",
+    "confirmingDesc": "This can take a few seconds...",
+    "successTitle": "Successful payment!",
+    "successDesc": "Your order was successfully confirmed",
+    "orderId": "Order ID",
+    "total": "Total",
+    "error": "Error loading the order",
+    "unknown": "Unknown state of order"
+  }
+}

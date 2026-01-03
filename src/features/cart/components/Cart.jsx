@@ -8,8 +8,10 @@ import { FaBroom } from 'react-icons/fa';
 import { AnimatePresence } from 'framer-motion';
 import { useNavigate } from "react-router-dom";
 import Loader from "../../../shared/components/app/Loader";
+import { useTranslation } from "react-i18next";
 
 const Cart = () => {
+    const { t } = useTranslation();
     const { data: cart, isLoading } = useCart();
     const { mutate: updateItem } = useUpdateCartItem();
     const { mutate: removeItem } = useRemoveCartItem();
@@ -32,14 +34,14 @@ const Cart = () => {
             className="flex flex-col h-full z-0">
             <header className="pb-4 border-b border-neutral-700 flex items-center justify-between">
                 <h1 className="text-xl font-semibold dark:text-white ">
-                    Your Cart
+                    {t("cart.title")}
                 </h1>
 
                 {cart?.items?.length > 0 && (
                     <button
                         className="p-1 rounded-md dark:text-white hover:bg-red-500/10 hover:text-red-500 transition cursor-pointer"
                         onClick={() => clearCart()}
-                        title="Clear cart"
+                        title={t("cart.clear")}
                     >
                         <FaBroom size={18} />
                     </button>
@@ -49,10 +51,10 @@ const Cart = () => {
                 {!cart?.items?.length ? (
                     <div className="flex flex-col items-center justify-center h-full text-center">
                         <p className="text-gray-400 pb-2">
-                            Your cart is empty
+                            {t("cart.emptyTitle")}
                         </p>
                         <span className="text-sm text-gray-500">
-                            Add some delicious items 🍣
+                            {t("cart.emptySubtitle")}
                         </span>
                     </div>
                 ) : (
@@ -78,7 +80,7 @@ const Cart = () => {
                 <footer className="space-y-3 mt-5">
                     <div className="flex justify-around dark:text-white font-semibold text-lg">
                         <span>
-                            Subtotal:
+                            {t("cart.subtotal")}
                         </span>
                         <span> ${calculateSubtotal(cart.items).toFixed(2)}</span>
                     </div>
@@ -88,7 +90,7 @@ const Cart = () => {
                             onClick={() => navigate('/checkout')}
                             className="w-2/4 py-3 text-white bg-red-500 hover:bg-red-600 rounded-lg font-semibold transition-all shadow-md cursor-pointer"
                         >
-                            Check Out
+                            {t("cart.checkout")}
                         </button>
                     </div>
                 </footer>)}

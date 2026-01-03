@@ -6,8 +6,10 @@ import GradientTextButton from "../../shared/components/Buttons/GradientTextButt
 import StyledTitle from "../../shared/components/Titles/StyledTitle";
 import FormButton from "../../shared/components/Buttons/FormButton";
 import { useAuthAnimation } from "./hooks/useAuthAnimation";
+import { useTranslation } from "react-i18next";
 
 const AuthenticationView = ({ initialType = 'login' }) => {
+    const { t } = useTranslation();
     const [type, setType] = useState(initialType);
     const { register, handleSubmit, onSubmit, errors, loading, error } = useAuthForm(type);
 
@@ -20,7 +22,7 @@ const AuthenticationView = ({ initialType = 'login' }) => {
                 style={{ boxShadow: "var(--card-shadow)" }}
             >
                 <StyledTitle>
-                    {type === 'login' ? 'Login' : 'Register'}
+                    {type === 'login' ? t("authentication.login") : t("authentication.register")}
                 </StyledTitle>
                 <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                     {authFields
@@ -28,7 +30,7 @@ const AuthenticationView = ({ initialType = 'login' }) => {
                         .map(field => (
                             <FormInput
                                 key={field.name}
-                                label={field.label}
+                                label={field.labelKey}
                                 name={field.name}
                                 type={field.type}
                                 register={register}
@@ -36,16 +38,20 @@ const AuthenticationView = ({ initialType = 'login' }) => {
                             />
                         ))
                     }
-                    {error && <p>{error}</p>}
+                    {error && (
+                        <p className="text-red-500 text-sm mt-2">
+                            {t("authentication.error")}
+                        </p>
+                    )}
                     <FormButton loading={loading}>
-                        {type === 'login' ? 'Login' : 'Register'}
+                        {type === 'login' ? t("authentication.login") : t("authentication.register")}
                     </FormButton>
                 </form>
 
                 <p className="text-center text-black dark:text-white mt-4">
-                    {type === 'login' ? "Don't have an account?" : "Already have an account?"}{' '}
+                    {type === 'login' ? t("authentication.switchToRegister") : t("authentication.switchTologin")}{' '}
                     <GradientTextButton onClick={() => setType(type === 'login' ? 'register' : 'login')}>
-                        {type === 'login' ? 'Register' : 'Login'}
+                        {type === 'login' ? t("authentication.register") : t("authentication.login")}
                     </GradientTextButton>
                 </p>
             </div>

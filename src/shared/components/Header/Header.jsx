@@ -7,6 +7,7 @@ import NotificationBell from "../Notification/NotificationBell";
 import { useSelector } from "react-redux";
 import CartButton from "./CartButton";
 import { useLocation } from "react-router-dom";
+import LanguageToggle from "./LanguageToggle";
 
 const Header = ({ setIsCartOpen }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +30,7 @@ const Header = ({ setIsCartOpen }) => {
                     {isAuthenticated && <NotificationBell />}
                 </div>
                 <ThemeToggle size={24} />
+                <LanguageToggle/>
                 {showCartButton && <CartButton setIsCartOpen={setIsCartOpen} />}
                 <div className="md:hidden">
                     <BurgerButton isOpen={isOpen} setIsOpen={setIsOpen} />

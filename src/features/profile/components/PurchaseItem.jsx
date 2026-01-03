@@ -1,7 +1,9 @@
+import { useTranslation } from "react-i18next";
 import { getImageUrl } from "../../../shared/utils/getUrlImage";
 
 const PurchaseItem = ({ item }) => {
-    console.log(item, 'log purchase history')
+    const { i18n } = useTranslation();
+
     return (
         <div className="flex items-center justify-between gap-4 p-4 
                         rounded-xl 
@@ -23,7 +25,7 @@ const PurchaseItem = ({ item }) => {
 
             </div>
             <span className="text-xs text-gray-500 dark:text-gray-500">
-                {new Date(item.purchasedAt).toLocaleDateString()}
+                {new Date(item.purchasedAt).toLocaleDateString(i18n.language)}
             </span>
         </div>
     );

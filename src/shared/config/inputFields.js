@@ -1,6 +1,6 @@
 export const authFields = [
-    { name: 'name', label: 'Name', type: 'text', showIn: ['register'] },
-    { name: 'email', label: 'Email', type: 'email', showIn: ['login', 'register'] },
-    { name: 'password', label: 'Password', type: 'password', showIn: ['login', 'register'] },
-    { name: 'confirmPassword', label: 'Confirm Password', type: 'password', showIn: ['register'] },
+    { name: 'name', labelKey: 'authentication.name', type: 'text', showIn: ['register'] },
+    { name: 'email', labelKey: 'authentication.email', type: 'email', showIn: ['login', 'register'] },
+    { name: 'password', labelKey: 'authentication.password', type: 'password', showIn: ['login', 'register'] },
+    { name: 'confirmPassword', labelKey: 'authentication.confirmPassword', type: 'password', showIn: ['register'] },
 ]

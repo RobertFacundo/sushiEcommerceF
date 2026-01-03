@@ -1,16 +1,18 @@
+import { useTranslation } from "react-i18next";
 import LeftColumn from "./components/LeftColumn";
 import RightColumn from "./components/RightColumn";
 import { useProfile } from "./hooks/useProfile";
 import { useProfileAnimation } from "./hooks/useProfileAnimation";
 
 const ProfileView = () => {
+    const { t } = useTranslation();
     const { data: profile, isLoading, isError } = useProfile();
     const { containerRef, leftRef, rightRef, giftCardRef, sectionsRef } = useProfileAnimation();
 
     if (isLoading) {
         return (
             <div className="w-full min-h-screen flex items-center justify-center text-gray-700 dark:text-gray-300">
-                Loading profile...
+                {t("profile.loading")}
             </div>
         );
     }
@@ -18,7 +20,7 @@ const ProfileView = () => {
     if (isError) {
         return (
             <div className="w-full min-h-screen flex items-center justify-center text-red-500">
-                Error loading profile data.
+                {t("profile.error")}
             </div>
         );
     }
