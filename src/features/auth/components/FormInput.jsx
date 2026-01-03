@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
-const FormInput = ({ label, name, type = 'text', register, error }) => {
+const FormInput = ({ labelKey, name, type = 'text', register, error }) => {
     const { t } = useTranslation();
     const [showPassword, setShowPassword] = useState(false);
 
