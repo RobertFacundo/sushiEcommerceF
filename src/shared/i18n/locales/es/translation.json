@@ -37,7 +37,9 @@
   },
   "common": {
     "outOfStock": "SIN STOCK",
-    "errorLoading": "Error al cargar los datos..."
+    "errorLoading": "Error al cargar los datos...",
+    "loading": "Cargando...",
+    "close": "Cerrar"
   },
   "cart": {
     "title": "Tu carrito",
@@ -80,7 +82,10 @@
     "noNotifications": "Todavía no hay notificaciones",
     "markAsRead": "Marcar como leída",
     "read": "Leída",
-    "noPurchases": "Todavía no hay compras"
+    "noPurchases": "Todavía no hay compras",
+    "notificationItem": {
+      "PURCHASE_COMPLETED": "🧾 Compra realizada con éxito. Orden #{{orderId}}"
+    }
   },
   "checkout": {
     "emptyCart": "Tu carrito está vacío",
@@ -95,6 +100,14 @@
     "orderId": "ID del pedido",
     "total": "Total",
     "error": "Error al cargar el pedido",
-    "unknown": "Estado desconocido del pedido"
+    "unknown": "Estado desconocido del pedido",
+    "title": "Pago",
+    "emailPlaceholder": "Correo electrónico",
+    "giftCardPlaceholder": "Tarjeta regalo",
+    "loginHint": "Iniciá sesión para usar tarjetas regalo y obtener descuentos exclusivos.",
+    "loginLink": "Iniciar sesión",
+    "pay": "Pagar con Stripe",
+    "redirecting": "Redirigiendo...",
+    "stripeHint": "Podés usar tarjetas de prueba de Stripe (ej. 4242 4242 4242 4242)"
   }
 }

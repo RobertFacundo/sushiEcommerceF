@@ -1,6 +1,7 @@
 import { useCart } from '../../cart/hooks/useCart';
 import { calculateSubtotal } from '../../cart/utils/cartTotals';
 import Loader from '../../../shared/components/app/Loader';
+import { useTranslation } from 'react-i18next';
 
 const CheckoutSummary = () => {
     const { t, i18n } = useTranslation();

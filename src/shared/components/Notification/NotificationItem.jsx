@@ -1,5 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const NotificationItem = ({ notification, onMarkRead }) => {
-    const { message, read, createdAt } = notification;
+    const { t, i18n } = useTranslation();
+    const { type, data, read, createdAt } = notification;
 
     return (
         <div
@@ -8,9 +11,11 @@ const NotificationItem = ({ notification, onMarkRead }) => {
           hover:bg-gray-100 dark:hover:bg-zinc-800`}
         >
             <div className="flex-1">
-                <p className="text-sm text-gray-800 dark:text-white">{message}</p>
+                <p className="text-sm text-gray-800 dark:text-white">
+                    {t(`profile.notificationItem.${type}`, data)}
+                </p>
                 <span className="text-xs text-gray-500 dark:text-gray-400">
-                    {new Date(createdAt).toLocaleTimeString()}
+                    {new Date(createdAt).toLocaleTimeString(i18n.language)}
                 </span>
             </div>
 
@@ -19,11 +24,11 @@ const NotificationItem = ({ notification, onMarkRead }) => {
                     onClick={onMarkRead}
                     className="ml-3 text-xs text-red-500 dark:text-white hover:underline cursor-pointer"
                 >
-                    Mark
+                    {t('profile.markAsRead')}
                 </button>
             ) : (
                 <span className="ml-3 text-xs text-gray-400">
-                    Read
+                    {t('profile.read')}
                 </span>
             )}
         </div>

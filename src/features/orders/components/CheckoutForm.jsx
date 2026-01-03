@@ -4,8 +4,10 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useCart } from "../../cart/hooks/useCart";
 import { motion } from 'framer-motion';
+import { useTranslation } from "react-i18next";
 
 const CheckoutForm = () => {
+    const { t } = useTranslation();
     const [email, setEmail] = useState('');
     const [giftCardCode, setGiftCardCode] = useState('');
 
@@ -45,7 +47,7 @@ const CheckoutForm = () => {
             <div className="space-y-4 ">
                 <input
                     type="email"
-                    placeholder="Email"
+                    placeholder={t('checkout.emailPlaceholder')}
                     className="w-full p-3 rounded-lg dark:bg-neutral-800 border"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -53,14 +55,14 @@ const CheckoutForm = () => {
                 {isAuthenticated ? (
                     <input
                         type="text"
-                        placeholder="Gift Card"
+                        placeholder={t('checkout.giftCardPlaceholder')}
                         className="w-full p-3 rounded-lg dark:bg-neutral-800 border"
                         value={giftCardCode}
                         onChange={(e) => setGiftCardCode(e.target.value)}
                     />) : (
                     <p className="text-sm text-gray-400">
-                        Log in to use gift cards & get exclusive discounts.{' '}
-                        <Link to='/authentication' className="text-red-500 underline">Log in</Link>
+                        {t('checkout.loginHint')}{' '}
+                        <Link to='/authentication' className="text-red-500 underline">{t('checkout.loginLink')}</Link>
                     </p>
                 )}
             </div>
@@ -75,7 +77,7 @@ const CheckoutForm = () => {
             </motion.button>
 
             <p>
-                You can use Stripe test Cards (e.g.g 4242 4242 4242 4242)
+                {t('checkout.stripeHint')}
             </p>
         </div>
     )

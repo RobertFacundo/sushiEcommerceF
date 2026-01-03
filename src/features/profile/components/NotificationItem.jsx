@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 
 const NotificationItem = ({ notification, onMarkRead }) => {
     const { t, i18n } = useTranslation();
-    const { message, read, createdAt } = notification;
+    const { type, data, read, createdAt } = notification;
 
     return (
         <div
@@ -10,7 +10,7 @@ const NotificationItem = ({ notification, onMarkRead }) => {
                 ${read ? "opacity-65 border-gray-300" : "border-red-200 bg-stone-100 dark:bg-neutral-800"}`}
         >
             <p className="text-sm text-gray-800 dark:text-white">
-                {message}
+                {t(`profile.notificationItem.${type}`, data)}
             </p>
             <div className="flex justify-between items-center mt-1">
                 <span className="text-xs text-gray-500 dark:text-gray-400">

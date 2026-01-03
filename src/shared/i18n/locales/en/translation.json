@@ -37,7 +37,9 @@
   },
   "common": {
     "outOfStock": "OUT OF STOCK",
-    "errorLoading": "Error loading data..."
+    "errorLoading": "Error loading data...",
+    "loading": "Loading...",
+    "close": "Close"
   },
   "cart": {
     "title": "Your Cart",
@@ -79,7 +81,10 @@
     "noNotifications": "No notifications yet",
     "markAsRead": "Mark as read",
     "read": "Read",
-    "noPurchases": "No purchases yet"
+    "noPurchases": "No purchases yet",
+    "notificationItem": {
+      "PURCHASE_COMPLETED": "🧾 Purchase completed successfully. Order #{{orderId}}"
+    }
   },
   "checkout": {
     "emptyCart": "Your cart is empty",
@@ -94,6 +99,14 @@
     "orderId": "Order ID",
     "total": "Total",
     "error": "Error loading the order",
-    "unknown": "Unknown state of order"
+    "unknown": "Unknown state of order",
+    "title": "Checkout",
+    "emailPlaceholder": "Email",
+    "giftCardPlaceholder": "Gift Card",
+    "loginHint": "Log in to use gift cards & get exclusive discounts.",
+    "loginLink": "Log in",
+    "pay": "Pay with Stripe",
+    "redirecting": "Redirecting...",
+    "stripeHint": "You can use Stripe test cards (e.g. 4242 4242 4242 4242)"
   }
 }
