@@ -49,7 +49,7 @@ const AuthenticationView = ({ initialType = 'login' }) => {
                 </form>
 
                 <p className="text-center text-black dark:text-white mt-4">
-                    {type === 'login' ? t("authentication.switchToRegister") : t("authentication.switchTologin")}{' '}
+                    {type === 'login' ? t("authentication.switchToRegister") : t("authentication.switchToLogin")}{' '}
                     <GradientTextButton onClick={() => setType(type === 'login' ? 'register' : 'login')}>
                         {type === 'login' ? t("authentication.register") : t("authentication.login")}
                     </GradientTextButton>

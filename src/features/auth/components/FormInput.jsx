@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
-const FormInput = ({ labelKey, name, type = 'text', register, error }) => {
+const FormInput = ({ label, name, type = 'text', register, error }) => {
     const { t } = useTranslation();
     const [showPassword, setShowPassword] = useState(false);
 
@@ -17,7 +17,7 @@ const FormInput = ({ labelKey, name, type = 'text', register, error }) => {
             <label htmlFor={name}
                 className="block text-black dark:text-white mb-1 font-medium"
             >
-                {t(labelKey)}
+                {t(label)}
             </label>
             <input
                 type={isPassword && showPassword ? 'text' : type}
