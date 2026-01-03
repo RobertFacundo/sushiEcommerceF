@@ -108,5 +108,8 @@
     "pay": "Pay with Stripe",
     "redirecting": "Redirecting...",
     "stripeHint": "You can use Stripe test cards (e.g. 4242 4242 4242 4242)"
+  },
+  "giftCard": {
+    "description": "Use this gift card for your first purchase!"
   }
 }

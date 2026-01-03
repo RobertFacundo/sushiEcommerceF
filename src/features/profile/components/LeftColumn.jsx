@@ -25,7 +25,12 @@ const LeftColumn = ({ profile, giftCardRef }) => {
                     <Loader className="text-neutral-500 dark:text-neutral-300" />
                 </div>
             )}
-            {!isLoading && giftCard && <GiftCard ref={giftCardRef} code={giftCard.code} description="Use this gift card for your first purchase!" />}
+            {!isLoading && giftCard && (
+                <GiftCard
+                    ref={giftCardRef}
+                    code={giftCard.code}
+                    description={t('giftCard.description')} />
+            )}
             <div className="bg-white dark:bg-zinc-900 shadow-sm rounded-xl p-6 h-fit space-y-6">
                 <div className="flex items-center justify-between gap-8">
                     <StyledTitle>
