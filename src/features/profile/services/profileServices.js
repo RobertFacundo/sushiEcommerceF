@@ -16,14 +16,14 @@ export const updateProfile = async (updateData) => {
     }
 };
 
-export const addNotification = async ({type, data}) => {
-    const { data } = await api.post('/user/notifications', {
+export const addNotification = async () => {
+    const response = await api.post('/user/notifications', {
         type: 'TEST',
         data: {
             message: `Notification test - ${new Date().toLocaleTimeString()}`
         }
     });
-    return data;
+    return response.data;
 };
 
 export const markNotificationAsRead = async (notificationId) => {
