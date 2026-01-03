@@ -6,14 +6,18 @@ export const useNotificationActions = (closeDropdown) => {
     const markReadMutation = useMarkNotificationAsRead();
 
     const handleSendTest = () => {
-        const msg = `Notification Test - ${new Date().toLocaleTimeString()}`;
-
-        addNotificationMutation.mutate(msg, {
-            onSuccess: () => {
-                toast.success('Test Notification sent');
+        addNotificationMutation.mutate(
+            {
+                type: 'TEST',
+                data: {
+                    message: `Notification test - ${new Date().toLocaleTimeString()}`
+                }
             },
-            onError: () => toast.error?.('Failed to send notification')
-        })
+            {
+                onSuccess: () => toast.success('Test Notification sent'),
+                onError: () => toast.error('Failed to send notification')
+            }
+        );
     };
 
     const handleMarkRead = (notificationId) => {

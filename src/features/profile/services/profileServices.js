@@ -16,7 +16,7 @@ export const updateProfile = async (updateData) => {
     }
 };
 
-export const addNotification = async () => {
+export const addNotification = async ({type, data}) => {
     const { data } = await api.post('/user/notifications', {
         type: 'TEST',
         data: {

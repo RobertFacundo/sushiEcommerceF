@@ -40,7 +40,7 @@ const CheckoutSuccess = () => {
                 className="space-y-4"
             >
                 <h1 className="text-2xl font-bold text-green-600">{t('checkout.successTitle')}</h1>
-                <p>{t('checkout.successDesc')}</p>
+                <p className="dark:text-white">{t('checkout.successDesc')}</p>
                 <div className="text-sm opacity-70 space-y-1">
                     <p>{t('checkout.orderId')}: {orderId}</p>
                     <p>Total: ${data.pricing.total.toFixed(2)}</p>
