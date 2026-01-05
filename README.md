@@ -1,16 +1,152 @@
-# React + Vite
+# 📘 Sushi Ecommerce – Frontend 🍣
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ecommerce web application built with React, focused on clean architecture, authentication, user notifications, and modern best practices.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 https://sushi-ecommerce-f.vercel.app
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧠 Features
 
-## Expanding the ESLint configuration
+This frontend implementation includes:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🧑‍💻 Authentication
+- Users can register and login securely  
+- Token handling with protected routes
+
+### 🧾 User Profile
+- View and edit user profile data  
+- Purchase history (if applicable)
+
+### 🔔 Notification System
+- Server-driven notifications  
+- Mark notifications as read  
+- Auto-refresh of profile data upon change
+
+### 🌐 Internationalization
+- English 🇬🇧 / Spanish 🇪🇸 toggle with i18next
+
+### 📱 Responsive UI
+- Works smoothly on mobile, tablet, and desktop
+
+### 🎨 Dark / Light Mode
+- Theme switch with smooth transitions
+
+### ⚡ Optimistic UI with React Query
+- Fast UI updates while data mutates  
+- Automatic cache invalidation & refetching
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer            | Technologies               |
+| ---------------- | ------------------------- |
+| UI               | React + Vite              |
+| Routing          | React Router              |
+| API State        | React Query               |
+| HTTP Client      | Axios                     |
+| Styling          | Tailwind CSS              |
+| Internationalization | i18next              |
+| Notifications    | Sonner (toasts)           |
+
+---
+
+## 🧩 Architecture & Folder Structure
+
+The project uses a **feature-based folder structure** to keep implementations isolated, organized, and maintainable:
+![VS Code folder structure](./shared/assets/folderStructure.png)
+
+---
+
+## 📌 Implementation Highlights
+
+### 🔒 Authentication Flow
+- JWT-based login & protected routes  
+- React Query used to fetch authenticated profile data  
+- Conditional rendering based on auth state
+
+---
+
+### 🛍️ Cart Management
+- Cart accessible to both guests and authenticated users  
+  - Guests → cart stored in `localStorage`  
+  - Authenticated → cart stored and persisted in backend  
+- Merge logic on login for a unified UX
+
+---
+
+### 🍽️ Our Menu View
+- Category list → click to show filtered products  
+- Breadcrumb UI for hierarchical navigation  
+- Sidebar cart always visible during browsing
+
+---
+
+### 💸 Checkout Experience
+- Stripe integration for payments (frontend handles redirect via session)  
+- Discounts supported via gift card logic (25% off)  
+- Backend webhook handles order finalization  
+- Purchase saved to user history upon confirmation
+
+---
+
+## 📦 Libraries & Integrations
+
+| Purpose          | Library                     |
+| ---------------- | --------------------------- |
+| Form Handling    | react-hook-form (if used)   |
+| Toasts           | Sonner                      |
+| HTTP             | Axios                       |
+| API Caching      | React Query                 |
+| i18n             | i18next                     |
+| Routing          | React Router                |
+| Styling          | Tailwind CSS                |
+
+---
+
+## 🧪 Dev Experience & Best Practices
+
+- 🧩 Feature-based structure for modularity and scalability  
+- 🚫 No duplication between layers — separation of concerns  
+- 🧠 Service layer isolates API calls from UI  
+- 📊 React Query for caching, background refetching and mutations  
+- 🪝 Custom hooks for composable logic  
+- 🎨 Shared components for UI consistency  
+- 🌍 Internationalization ready (EN/ES)
+
+---
+
+## 🧠 Notifications UX
+
+- Notifications driven by backend events  
+- Notifications are marked as read  
+- React Query auto-refreshes profile data  
+- Translations integrated for notification messages
+
+---
+## 🙌 Acknowledgments
+
+Built as part of a full-stack challenge integrating:
+
+- ✅ Authentication
+
+- ✅ Cart management
+
+- ✅ Stripe checkout
+
+- ✅ React Query cache strategy
+
+- ✅ Internationalization & UI state
+
+- ✅ Modular & maintainable architecture
+
+---
+
+## 📬 Contact
+
+- LinkedIn: [Facundo Robert](https://www.linkedin.com/in/robertfacundodev/)
+- Portfolio: [My Portfolio](https://facundorobert.vercel.app/) 
+- Email: robertf.coder@gmail.com
