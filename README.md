@@ -42,22 +42,23 @@ This frontend implementation includes:
 
 ## 🛠️ Tech Stack
 
-| Layer            | Technologies               |
-| ---------------- | ------------------------- |
-| UI               | React + Vite              |
-| Routing          | React Router              |
-| API State        | React Query               |
-| HTTP Client      | Axios                     |
-| Styling          | Tailwind CSS              |
-| Internationalization | i18next              |
-| Notifications    | Sonner (toasts)           |
+| Layer                    | Technologies                          |
+| ------------------------ | ------------------------------------- |
+| UI                       | React + Vite                          |
+| Routing                  | React Router                          |
+| Global Client State      | Redux Toolkit                         |
+| Server State / Caching   | React Query                           |
+| HTTP Client              | Axios                                 |
+| Styling                  | Tailwind CSS                          |
+| Internationalization     | i18next                               |
+| Notifications            | Sonner (toasts)                       |
 
 ---
 
 ## 🧩 Architecture & Folder Structure
 
 The project uses a **feature-based folder structure** to keep implementations isolated, organized, and maintainable:
-![VS Code folder structure](./shared/assets/folderStructure.png)
+![VS Code folder structure](./docs/folderStructure.png)
 
 ---
 
@@ -85,6 +86,14 @@ The project uses a **feature-based folder structure** to keep implementations is
 
 ---
 
+## 🧠 State Management Strategy
+
+- **Redux Toolkit** is used for global client-side state (UI, preferences, app-level flags).
+- **React Query** is used for server state (API data, caching, mutations).
+- This separation avoids overusing Redux for async data and keeps the architecture clean and scalable.
+
+---
+
 ### 💸 Checkout Experience
 - Stripe integration for payments (frontend handles redirect via session)  
 - Discounts supported via gift card logic (25% off)  
@@ -95,15 +104,16 @@ The project uses a **feature-based folder structure** to keep implementations is
 
 ## 📦 Libraries & Integrations
 
-| Purpose          | Library                     |
-| ---------------- | --------------------------- |
-| Form Handling    | react-hook-form (if used)   |
-| Toasts           | Sonner                      |
-| HTTP             | Axios                       |
-| API Caching      | React Query                 |
-| i18n             | i18next                     |
-| Routing          | React Router                |
-| Styling          | Tailwind CSS                |
+| Purpose                 | Library                          |
+| ----------------------- | -------------------------------- |
+| Global State Management | Redux Toolkit                    |
+| Async State / Caching   | React Query                      |
+| Form Handling           | react-hook-form                  |
+| HTTP                    | Axios                            |
+| Routing                 | React Router                     |
+| Internationalization    | i18next                          |
+| Notifications / Toasts  | Sonner                           |
+| Styling                 | Tailwind CSS                     |
 
 ---
 
