@@ -84,6 +84,7 @@
     "read": "Leída",
     "noPurchases": "Todavía no hay compras",
     "notificationItem": {
+      "TEST": "🧪 Notificación de prueba: {{message}}",
       "PURCHASE_COMPLETED": "🧾 Compra realizada con éxito. Orden #{{orderId}}"
     }
   },
