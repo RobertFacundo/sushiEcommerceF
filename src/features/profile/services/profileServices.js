@@ -17,17 +17,27 @@ export const updateProfile = async (updateData) => {
 };
 
 export const addNotification = async () => {
+    console.log('[API] addNotification → sending request');
+
     const response = await api.post('/user/notifications', {
         type: 'TEST',
         data: {
             message: `Notification test - ${new Date().toLocaleTimeString()}`
         }
     });
+
+    console.log('[API] addNotification → sending request');
     return response.data;
 };
 
 export const markNotificationAsRead = async (notificationId) => {
-    const { data } = await api.patch(`/user/notifications/${notificationId}/read`);
+    console.log('[API] addNotification → response', response.data);
+
+    const { data } = await api.patch(
+        `/user/notifications/${notificationId}/read`
+    );
+
+    console.log('[API] markNotificationAsRead → response', data);
     return data;
 };
 
