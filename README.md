@@ -63,7 +63,6 @@ The project uses a **feature-based folder structure** to keep implementations is
   <img
     src="./docs/folderStructure.png"
     alt="VS Code folder structure"
-    width="600"
   />
 </p>
 
