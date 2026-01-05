@@ -58,7 +58,14 @@ This frontend implementation includes:
 ## 🧩 Architecture & Folder Structure
 
 The project uses a **feature-based folder structure** to keep implementations isolated, organized, and maintainable:
-![VS Code folder structure](./docs/folderStructure.png)
+
+<p align="center">
+  <img
+    src="./docs/folderStructure.png"
+    alt="VS Code folder structure"
+    width="600"
+  />
+</p>
 
 ---
 
