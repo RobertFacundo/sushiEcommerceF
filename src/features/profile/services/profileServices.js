@@ -31,7 +31,7 @@ export const addNotification = async () => {
 };
 
 export const markNotificationAsRead = async (notificationId) => {
-    console.log('[API] addNotification → response', response.data);
+    console.log('[API] markNotificationAsRead → response', notificationId);
 
     const { data } = await api.patch(
         `/user/notifications/${notificationId}/read`

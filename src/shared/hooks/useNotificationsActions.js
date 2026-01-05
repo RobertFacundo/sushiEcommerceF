@@ -21,11 +21,16 @@ export const useNotificationActions = (closeDropdown) => {
     };
 
     const handleMarkRead = (notificationId) => {
+        console.log('[UI] Mark read clicked:', notificationId);
+
         markReadMutation.mutate(notificationId, {
             onSuccess: () => {
                 toast.success?.('Marked as read');
             },
-            onError: () => toast.error?.('Failed to mark as Read')
+            onError: () => {
+                console.error('[UI] Mark read error', e);
+                toast.error?.('Failed to mark as Read')
+            }
         });
     };
 
