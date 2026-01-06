@@ -1,6 +1,6 @@
 # 📘 Sushi Ecommerce – Frontend 🍣
 
-Ecommerce web application built with React, focused on clean architecture, authentication, user notifications, and modern best practices.
+Ecommerce web application built with React, featuring a professional, scalable architecture with clear separation of concerns. The project follows modern best practices including Redux Toolkit for global state, React Query for server state and caching, and composable custom hooks. Fully tested and designed with reusable, maintainable components, implementing real-world patterns like service layers, Stripe payment integration, and user notifications.
 
 ## 🚀 Live Demo
 
@@ -52,6 +52,7 @@ This frontend implementation includes:
 | Styling                  | Tailwind CSS                          |
 | Internationalization     | i18next                               |
 | Notifications            | Sonner (toasts)                       |
+| Testing                  | Vitest + React Testing Library        |
 
 ---
 
@@ -120,6 +121,7 @@ The project uses a **feature-based folder structure** to keep implementations is
 | Internationalization    | i18next                          |
 | Notifications / Toasts  | Sonner                           |
 | Styling                 | Tailwind CSS                     |
+| Testing                 | Vitest + React Testing Library  |
 
 ---
 
@@ -131,7 +133,10 @@ The project uses a **feature-based folder structure** to keep implementations is
 - 📊 React Query for caching, background refetching and mutations  
 - 🪝 Custom hooks for composable logic  
 - 🎨 Shared components for UI consistency  
+- ✅ Fully tested with Vitest and React Testing Library, covering loading, error, and data states
 - 🌍 Internationalization ready (EN/ES)
+- 🔒 Stripe integration for secure payments  
+- 💡 Reusable, scalable, and maintainable code following clean coding principles  
 
 ---
 
